@@ -1,0 +1,57 @@
+<div class="banner">
+  <img src="../assets/img/blog.png" usemap="#readnow">
+</div>
+<div class="blogs">
+  <div class="baivietnoibat">
+      <h2>Bài viết nổi bật</h2>
+      <hr>
+      <div *ngFor="let o of outstandingList" class="baiviet-item">
+          <div class="baiviet-img">
+              <img [src]='o.Image' alt="">
+          </div>
+          <div class="baiviet-mota">
+              <div class="baiviet-tieude">
+                  <a [routerLink]="['/blog', o._id]"><b>{{o.Title}}</b></a>
+              </div>
+              <div class="baiviet-ngaydang">
+                  <p>Ngày đăng:{{convertDate(o.CreateDate)}}</p>
+              </div>
+              <div class="baiviet-tacgia">
+                  <p>Người viết: {{o.Writer}}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="tintuc">
+      <h1>Tin tức</h1>
+      <div *ngFor="let blog of blogsList" class="tintuc-item">
+          <div class="tintuc-img">
+              <img [src]="blog.Image"  alt="">
+          </div>
+          <div class="tintuc-mota">
+              <div class="tintuc-tieude">
+                  <a [routerLink]="['/blog', blog._id]"><b>{{blog.Title}}</b></a>
+              </div>
+              <div class="tintuc-nguoiviet">
+                  <p><i>Người viết: {{blog.Writer}} - {{convertDate(blog.CreateDate)}}</i></p>
+              </div>
+              <div class="tintuc-mieuta">
+                  <p class="trundicate">{{blog.Content}}</p>
+              </div>
+          </div>
+      </div>
+      <div class="sotrang">
+          <p (click)="paginateIcon('pre')"><i class="fa-solid fa-chevron-left"></i></p>
+          <p *ngFor="let i of totalPage; let indexOfElement=index" (click)="getList(indexOfElement + 1) "
+              [class.active]="page == indexOfElement + 1">{{indexOfElement + 1}}</p>
+          <p (click)="paginateIcon('next')"><i class="fa-solid fa-chevron-right"></i></p>
+      </div>
+  </div>
+</div>
+<figure>
+  <map name="readnow">
+      <area href="./blogdetail.html"
+          coords="253,385,263,366,266,363,353,363,393,363,437,366,447,367,463,372,449,399,266,398,250,366"
+          shape="poly">
+  </map>
+</figure>

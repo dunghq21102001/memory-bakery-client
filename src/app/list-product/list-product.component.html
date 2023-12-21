@@ -1,0 +1,97 @@
+<body>
+  <div class="container">
+    <!-- Header -->
+
+    <!-- Body -->
+    <div class="body">
+      <div class="list-product">
+        <p class="title">Danh mục sản phẩm</p>
+        <hr>
+        <ul style="cursor: pointer;">
+          <span class="now"> <a href="./listProduct">
+              <li>Tất cả</li>
+            </a></span>
+          <a class="type_category" (click)="getListProductByCategory('Bánh kem')">
+            <li>Bánh kem</li>
+          </a>
+          <a class="type_category" (click)="getListProductByCategory('Cupcakes')">
+            <li>Cupcakes</li>
+          </a>
+          <a class="type_category" (click)="getListProductByCategory('Bánh quy')">
+            <li>Bánh quy</li>
+          </a>
+          <a class="type_category" (click)="getListProductByCategory('Donuts')">
+            <li>Donuts</li>
+          </a>
+          <a class="type_category" (click)="getListProductByCategory('Bánh mì')">
+            <li>Bánh mì</li>
+          </a>
+        </ul>
+        <p class="title">Khoảng giá</p>
+        <hr>
+        <p>Từ</p>
+        <input #minprice type="text">
+        <p> Đến</p>
+        <input #maxprice type="text">
+        <button (click)="getListProductByPrice(minprice.value,maxprice.value)" class="search-price">Tìm kiếm</button>
+        <p class="title">Đánh giá</p>
+        <hr>
+        <a style="cursor: pointer;" class="star-product"  (click)="getListProductByRate('5')" >
+          <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        </a>
+        <a style="cursor: pointer;" class="star-product"  (click)="getListProductByRate('4')" >
+          <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i> <span>trở lên</span></div>
+        </a>
+        <a style="cursor: pointer;" class="star-product"  (click)="getListProductByRate('3')" >
+          <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> <span>trở lên</span></div>
+        </a>
+        <a style="cursor: pointer;" class="star-product"  (click)="getListProductByRate('2')" >
+          <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i
+              class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> <span>trở lên</span></div>
+        </a>
+        <a style="cursor: pointer;" class="star-product"  (click)="getListProductByRate('1')" >
+          <div><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i
+              class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i> <span>trở lên</span></div>
+        </a>
+      </div>
+      <div id="products">
+        <section class="hot-products">
+          <div class=" hot-product">
+            <div class=" products" *ngFor="let product of listProductPerPage">
+              <div class=" product">
+                <div class="img-product">
+                  <a href="./detail/{{product._id}}"><img style="height: 200px " src="{{product.Img[0]}}"></a>
+                  <div class="cart-love">
+                    <a (click)="addToCart(product)"> <i class="fa-solid fa-cart-shopping"></i></a> <a href="#"> <i
+                        class="fa-solid fa-heart"></i></a>
+                  </div>
+                </div>
+                <p class="name">{{product.Name}}</p>
+                <p class="price">
+                  <span class="old-price">{{convertVND(+product.Variant[0].UnitPrice)}}</span>
+                  <span class="new-price">{{convertVND(+product.Variant[0].PromotionPrice)}}</span>
+                </p>
+                <div><span class="star"> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  </span><span>{{product.TotalRateing}}</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+    <div class="sotrang">
+      <p (click)="preAndNextHandler('pre')"><i class="fa-solid fa-chevron-left"></i></p>
+      <p *ngFor="let page of totalPage; let indexOfElement=index" [class.active]="currentPage == indexOfElement + 1"
+        (click)="changePage(indexOfElement + 1)">
+        {{indexOfElement + 1}}
+      </p>
+      <p (click)="preAndNextHandler('next')"> <i class="fa-solid fa-chevron-right"></i></p>
+    </div>
+  </div>
+</body>

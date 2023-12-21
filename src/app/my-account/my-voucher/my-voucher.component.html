@@ -1,0 +1,25 @@
+<div class="title">Kho Voucher</div>
+<div class="container">
+  <div style="text-align: right; margin-right: 30px;">
+      <a href="./promotion.html" target="_blank" class="input" >Tìm thêm</a>
+  </div>
+  <div class="list-voucher">
+    <div class="background-voucher" *ngFor="let v of vouchers">
+    <div class="voucher" >
+        <div class="logo">
+            <img src="../assets/img/logo.jpg" alt="">
+        </div>
+        <div class="discount">
+            <h5>{{v.Code}}</h5>
+            <span>{{v.Name}}</span><br>
+            <span style="font-size:15px">Đơn hàng có giá trị từ {{v.Condition}}k</span>
+            <hr>
+            <span>HSD: {{v.ExpireDate | date:'dd/MM/yyyy'}}</span><br>
+            <div class="btn-input">
+              <input type="button" value="Sao chép" (click)="copyVoucherCode(v.Code)">
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</div>

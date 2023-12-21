@@ -1,0 +1,450 @@
+/* Khai báo biến màu */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,800');
+:root {
+    --primary_color: #E75C6B;
+    --color_button: #F38A95;
+    --background-color: #F9F2F2;
+    --button: #F38A95;
+    --button_hover: #81C6E8;
+}
+
+/* Thanh điều hướng */
+.navigation {
+    margin-left: 0 !important;
+    width: auto;
+    height: 35px;
+    background-color: var(--background-color);
+}
+
+ol {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    line-height: 35px;
+    margin-left: 10px;
+}
+ol li {
+    margin-left: 10px;
+    font-size: 14px ;
+}
+
+/*  */
+.left {
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+
+}
+.right {
+    text-align: right;
+}
+/*  */
+
+.container_main {
+    display: flex;
+    flex-direction: column;
+}
+
+.body {
+    margin: auto !important ;
+    margin-top: 0 !important;
+    background-color: #f5f5f5;
+}
+/* Chi tiết sản phẩm */
+
+/* CSS cho tất cả IMG */
+.left-container img {
+    width: 60%;
+    display: block;
+}
+/* Nếu chiều cao của box img không đủ chứa thì ẩn đi */
+.img-display {
+    overflow: hidden;
+}
+.img-showcase {
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+    /* Chưa thấy gì xảy ra */
+}
+.content-product {
+  background-color: white;
+  border: 1px solid #e0e0e0; /* add a border to the container */
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.img-item:hover {
+  border: 1px solid red; /* add a red border on hover */
+}
+.img-showcase img {
+    min-width: 100%; /*cho hiện 1 hình lớn 1 lần*/
+}
+.img-select {
+    display: flex;
+}
+.img-item {
+    margin: 3px;
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+    /* Khi hover vô thì có độ mờ mờ */
+
+}
+
+/* Right */
+/* Mô tả */
+.title {
+    text-align: left;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary_color)
+}
+
+:root {
+    --height: 35px;
+}
+.price {
+    font-family: 'Inter', sans-serif;
+}
+
+.old-price{
+    color: #887e7d;
+    text-decoration: line-through;
+    font-size: 22px;
+}
+.new-price{
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.sub_title {
+    font-weight: bold;
+    font-size: 26px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.description {
+    font-size: 20px;
+    line-height: 1.7;
+    text-align: justify;
+    font-family: 'Inter', sans-serif;
+}
+.quantity {
+    display: flex;
+}
+.quantity-box {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.quantity-box button,
+.quantity-box input {
+    height: 35px;
+    width: 35px;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #333333;
+    font-size: 16px;
+    padding: 0;
+}
+
+.quantity-decrease {
+    border-radius: 50% 0 0 50%;
+    cursor: pointer;
+}
+
+.quantity-increase {
+    border-radius: 0 50% 50% 0;
+    cursor: pointer;
+}
+.row {
+    margin: 5px;
+}
+
+.input {
+    background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin: 15px;
+    font-size: 22px;
+
+}
+
+.input:hover {
+    background-color: var(--button_hover);
+    color: black;
+}
+.add {
+    width: 250px;
+}
+
+.button {
+    display: flex;
+}
+
+.buy_now {
+    width: 200px;
+}
+
+.star{
+    color: yellow;
+
+}
+.star2 {
+    font-size: 22px;
+}
+
+
+/* Bình luận */
+
+.review {
+    margin: auto !important;
+    margin-top: 10px !important;
+
+}
+
+.star1 {
+    margin-left: 10px;
+}
+
+.col-1 img {
+    width:80px;
+    height:80px;
+    border-radius: 50px;
+}
+
+.review_button {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+
+#products{
+  margin-left: 50px;
+  margin-right: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 1400px;
+}
+.product{
+  background-color: #f0d9d8;
+  text-align: center;
+  border-radius: 10px;
+  margin: 12px;
+  padding: 15px;
+  height: 340px;
+  width: 350px;
+}
+
+.product p{
+  margin-bottom: 0;
+}
+.product img{
+  width: 270px;
+  height: 290px;
+  padding: 20px;
+  border-radius: 40px;
+}
+.product .img-product{
+  position: relative;
+}
+.product .name{
+  font-size: 17px;
+  font-weight: bold;
+  text-transform:uppercase;
+}
+.product .cart-love{
+  background-color: #f38a95;
+  width: 40%;
+  position: absolute;
+  left: 30%;
+  bottom:0;
+  border-radius: 10px;
+  font-size: 25px;
+}
+.product .star{
+  color: yellow;
+}
+.vote{
+  color: rgb(143, 143, 133);
+  font-weight: 500;
+}
+h2 {
+  color: #ff0000;
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.img-item{
+  width: 100px;
+  height: 100px;
+}
+.swiper {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.swiper-wrapper{
+  width: 100%;
+}
+.product-variation {
+  overflow: visible;
+  cursor: pointer;
+  min-width: 5rem;
+  min-height: 2.125rem;
+  box-sizing: border-box;
+  padding: .25rem .75rem;
+  margin: 0 8px 8px 0;
+  color: rgba(0,0,0,.8);
+  text-align: left;
+  border-radius: 2px;
+  border: 1px solid rgba(0,0,0,.09);
+  position: relative;
+  background: #fff;
+  outline: 0;
+  word-break: break-word;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center
+}
+
+.product-variation.focus-visible:before,.product-variation:focus-visible:before {
+  --focus-indicator-spacing: 2px;
+  content: "";
+  width: calc(100% + var(--focus-indicator-spacing)*2);
+  height: calc(100% + var(--focus-indicator-spacing)*2);
+  padding: var(--focus-indicator-spacing);
+  outline: var(--focus-indicator-stroke-width) solid var(--focus-indicator-color);
+  position: absolute;
+  border-radius: var(--focus-indicator-border-radius);
+  top: calc(var(--focus-indicator-spacing)*-1);
+  left: calc(var(--focus-indicator-spacing)*-1);
+  margin: calc(var(--focus-indicator-spacing)*-1)
+}
+
+.product-variation:hover {
+  color: var(--brand-primary-color,#ee4d2d);
+  border-color: var(--brand-primary-color,#ee4d2d)
+}
+
+.product-variation--disabled {
+  color: rgba(0,0,0,.26);
+  cursor: not-allowed
+}
+
+.product-variation--disabled:hover {
+  border-color: rgba(0,0,0,.09);
+  color: rgba(0,0,0,.26)
+}
+
+.product-variation--disabled:focus {
+  outline: 0
+}
+
+.product-variation--selected {
+  color: var(--brand-primary-color,#ee4d2d);
+  border-color: var(--brand-primary-color,#ee4d2d)
+}.product-variation {
+    overflow: visible;
+    cursor: pointer;
+    min-width: 5rem;
+    min-height: 2.125rem;
+    box-sizing: border-box;
+    padding: .25rem .75rem;
+    margin: 0 8px 8px 0;
+    color: rgba(0,0,0,.8);
+    text-align: left;
+    border-radius: 2px;
+    border: 1px solid rgba(0,0,0,.09);
+    position: relative;
+    background: #fff;
+    outline: 0;
+    word-break: break-word;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
+}
+
+.product-variation.focus-visible:before,.product-variation:focus-visible:before {
+    --focus-indicator-spacing: 2px;
+    content: "";
+    width: calc(100% + var(--focus-indicator-spacing)*2);
+    height: calc(100% + var(--focus-indicator-spacing)*2);
+    padding: var(--focus-indicator-spacing);
+    outline: var(--focus-indicator-stroke-width) solid var(--focus-indicator-color);
+    position: absolute;
+    border-radius: var(--focus-indicator-border-radius);
+    top: calc(var(--focus-indicator-spacing)*-1);
+    left: calc(var(--focus-indicator-spacing)*-1);
+    margin: calc(var(--focus-indicator-spacing)*-1)
+}
+
+.product-variation:hover {
+    color: var(--brand-primary-color,#ee4d2d);
+    border-color: var(--brand-primary-color,#ee4d2d)
+}
+
+.product-variation--disabled {
+    color: rgba(0,0,0,.26);
+    cursor: not-allowed
+}
+
+.product-variation--disabled:hover {
+    border-color: rgba(0,0,0,.09);
+    color: rgba(0,0,0,.26)
+}
+
+.product-variation--disabled:focus {
+    outline: 0
+}
+
+.product-variation--selected {
+    color: var(--brand-primary-color,#ee4d2d);
+    border-color: var(--brand-primary-color,#ee4d2d)
+}
+.product-variation__tick {
+  width: .9375rem;
+  height: .9375rem;
+  position: absolute;
+  overflow: hidden;
+  right: 0;
+  bottom: 0
+}
+.product-variation__tick>.icon-tick-bold {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 8px
+}
+
+.product-variation__tick:before {
+  border: .9375rem solid transparent;
+  border-bottom: .9375rem solid var(--brand-primary-color,#ee4d2d);
+  content: "";
+  position: absolute;
+  right: -.9375rem;
+  bottom: 0
+}

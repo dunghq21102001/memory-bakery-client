@@ -1,0 +1,65 @@
+<body *ngIf="!showEdit">
+  <div class="title">Hồ sơ của tôi</div>
+  <div class="main">
+    <div class="shadow-sm p-3 mb-4 bg-body rounded">
+      <div class="row" *ngIf="user">
+        <!-- Phần bên trái -->
+        <div class="col-8">
+          <!-- Dòng 1 -->
+          <div class="mb-3 row">
+            <label class="col-sm-5 col-form-label">Tên đăng nhập:</label>
+            <div class="col-sm-7">
+              <input type="text" readonly="" class="form-control-plaintext" value="{{user.UserName}}">
+            </div>
+          </div>
+          <!-- Dòng 2 -->
+          <div class="mb-3 row">
+            <label class="col-sm-5 col-form-label">Họ và tên:</label>
+            <div class="col-sm-7">
+              <input type="text" readonly="" class="form-control-plaintext" value="{{user.FullName}}">
+            </div>
+          </div>
+          <!-- Dòng 3 -->
+          <div class="mb-3 row">
+            <label class="col-sm-5 col-form-label">Số điện thoại:</label>
+            <div class="col-sm-7">
+              <input type="text" readonly="" class="form-control-plaintext" value="{{user.Phone}}">
+            </div>
+          </div>
+          <!-- Dòng 4 -->
+          <div class="mb-3 row">
+            <label class="col-sm-5 col-form-label">Giới tính:</label>
+            <div class="col-sm-7">
+              <label class="form-check form-check-inline"><input class="form-check-input" checked name="inlineRadioOptions" id="inlineRadio1" type="radio" [checked]="user.Gender === 'Nam'">Nam</label>
+              <label class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" [checked]="user.Gender === 'Nữ'">Nữ</label>
+              <label class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" [checked]="user.Gender === 'Khác'">Khác</label>
+            </div>
+          </div>
+          <!-- Dòng 5 -->
+          <div class="mb-3 row">
+            <label class="col-sm-5 col-form-label">Ngày sinh:</label>
+            <div class="col-sm-7">
+              <input type="date" class="form-control input1" id="inputDOB" [value]="getUserDateOfBirth()">
+            </div>
+          </div>
+           <!-- Phần button -->
+      <div class="button">
+        <button type="button" class="btn btn-primary input" (click)="showEditProfile()">
+          Chỉnh sửa
+        </button>
+      </div>
+        </div>
+        <!-- Phần bên phải -->
+        <div class="col-4" style="margin: auto;">
+          <div class="text-center">
+            <img src="{{user.Image}}" class="rounded" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<div *ngIf="showEdit">
+  <app-my-edit-profile></app-my-edit-profile>
+</div>

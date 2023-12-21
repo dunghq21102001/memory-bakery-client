@@ -1,0 +1,223 @@
+#header{
+  background-color: white;
+  /* position: fixed; */
+  padding: 0px 5%;
+  top: 0;
+  left: 0;
+  right:0;
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 126px;
+  font-family: 'Montserrat', sans-serif;
+  position: sticky;
+  transition: top .2s ease;
+}
+#header.show{
+  top: -1000px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: var(--hover_color)
+}
+#header a{
+  text-decoration: none;
+  color: var(--primary_color);
+}
+#header a:hover{
+  color: var(--hover_color);
+}
+/* header-top */
+.header-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.header-top img{
+  height: 80px;
+  width: 80px;
+}
+.header-top .btn-search .search{
+  width: 500px;
+  height: 50px;
+  border: 0 white;
+  border-radius: 20px ;
+  background-color: #FFEAE9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.header-top .btn-search{
+  position: relative;
+}
+.header-top .btn-search .ti-search {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #FFEAE9;
+  border-radius: 50%;
+  margin: 2px;
+  border:  none;
+}
+.header-top .btn-search .ti-search:hover{
+  color: var(--hover_color);
+}
+.btn-search input {
+
+  padding: 0 60px 0 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.header-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+
+}
+.header-top .logo img{
+  width: 200px;
+}
+.right-header-top{
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+  margin-left: 20px;
+}
+.right-header-top div {
+  margin: 0 10px;
+  width: max-content;
+  align-self: center
+}
+.right-header-top .isLogin {
+  margin: 0 10px;
+  width: max-content;
+}
+
+.right-header-top li a{
+  padding: 0 24px;
+  line-height: 46px;
+  display: block;
+}
+
+
+.right-header-top .account{
+  position: relative;
+}
+.right-header-top .account .sub-nav{
+  display: none;
+  min-width: 240px;
+  position: absolute;
+  top:100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  border-radius: 5px;
+  z-index: 1;
+  padding-left: 0;
+}
+.right-header-top .account:hover .sub-nav{
+  display: block;
+}
+.right-header-top .account .sub-nav a:hover{
+  background-color: bisque;
+  color: var(--hover_color);
+}
+
+
+
+
+
+/* .header-bottom {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 46px;
+} */
+.header-bottom{
+  overflow:hidden;
+  height: 46px;
+  display: flex;
+  justify-content: space-around;
+
+}
+ul{
+  list-style: none;
+}
+.nav > li{
+  display: inline-block;
+}
+
+.nav >li > a{
+  font-weight: bold;
+  margin: 0 26px;
+  position: relative;
+}
+.nav li a{
+  padding: 0 5px;
+  line-height: 46px;
+  display: block;
+}
+
+
+.header-bottom .nav >li >a::after{
+  content: "";
+  height: 3px;
+  background-color: var(--hover_color);
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.header-bottom .nav li a:hover::after{
+  width: 100%;
+  transform: scaleX(1);
+}
+.now>a{
+  color: var(--hover_color)!important;
+}
+.main.active {
+  color: var(--hover_color)!important;
+}
+.promotion.active {
+  color: var(--hover_color)!important;
+}
+
+
+.header-bottom .sub-nav{
+  display: none;
+  min-width: 250px;
+  position: absolute;
+  top:100%;
+  margin-left: 37px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding-left: 0;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+.nav{
+  display: inline-block;
+}
+.nav li:hover .sub-nav{
+  display: block;
+}
+.nav .sub-nav li:hover a{
+  background-color: bisque;
+  color: var(--hover_color);
+}
+.nav>li:hover>a{
+  color: var(--hover_color);
+}
+.logout{
+  cursor: pointer;
+}

@@ -1,0 +1,268 @@
+<div class="container">
+  <!-- Header -->
+
+  <!-- Slider -->
+  <div class="abc" *ngIf="login">
+    <marquee scrollamount="15" class="intro"> Chào mừng <span
+        style="font-style: italic; font-weight: bold;">{{id}}</span> đã ghé website của chúng tôi </marquee>
+  </div>
+  <div class="abc" *ngIf="!login">
+    <!-- your login form goes here -->
+  </div>
+</div>
+<div class="body">
+  <div class="slider">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <a href="./listProduct.html"><img src="../assets/img/BANNER/1.png" class="d-block w-100" alt="..."></a>
+        </div>
+
+        <div class="carousel-item">
+          <a href="./promotion.html"> <img src="../assets/img/BANNER/2.png" class="d-block w-100" alt="..."></a>
+        </div>
+        <div class="carousel-item">
+          <a href="./main.html"> <img src="../assets/img/BANNER/3.png" class="d-block w-100" alt="..."></a>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <!-- Category -->
+  <div class="category">
+    <a [routerLink]="['/listProduct']" [queryParams]="{category: 'Bánh kem'}" class="type_category"><img
+        src="../assets/img/Category/Bánh sinh nhật.png" alt=""><span>Bánh kem</span></a>
+    <a [routerLink]="['/listProduct']" [queryParams]="{category: 'Cupcakes'}" class="type_category"><img
+        src="../assets/img/Category/Cupcake.png" alt=""><span>Cupcakes</span></a>
+    <a [routerLink]="['/listProduct']" [queryParams]="{category: 'Bánh quy'}" class="type_category"><img
+        src="../assets/img/Category/Bánh quy.png" alt=""><span>Bánh quy</span></a>
+    <a [routerLink]="['/listProduct']" [queryParams]="{category: 'Donuts'}" class="type_category"><img
+        src="../assets/img/Category/Donut.png" alt=""><span>Donuts</span></a>
+    <a [routerLink]="['/listProduct']" [queryParams]="{category: 'Bánh mì'}" class="type_category"><img
+        src="../assets/img/Category/Bánh mì.png" alt=""><span>Bánh mì</span></a>
+  </div>
+
+  <!-- New Product -->
+
+  <div id="new_product" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#new_product" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#new_product" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#new_product" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <p class="main-title">Sản phẩm mới</p>
+      <div class="carousel-item active">
+        <div class="new-product">
+          <a href="./productDetail.html">
+            <img src="../assets/img/78.png" alt=""></a>
+          <div class="new-product__right">
+            <a href="./productDetail.html">
+              <p class="name">Bánh kem Cat Cakes</p>
+            </a>
+            <p class="price">
+              <span class="old-price">250.000 VNĐ</span>
+              <span class="new-price">199.999 VNĐ</span>
+            </p>
+            <p class="content">
+              "Chiếc bánh xinh đẹp với lớp mứt xoài vàng óng phía trên gây ấn tượng với khách hàng bởi màu sắc bắt mắt
+              cùng hương vị thơm ngon khó cưỡng."
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="new-product">
+          <a href="./productDetail.html">
+            <img src="../assets/img/ẢNH SẢN PHẨM MỚI/84.png" alt=""></a>
+          <div class="new-product__right">
+            <a href="./productDetail.html">
+              <p class="name">Bánh kem Romantic</p>
+            </a>
+            <p class="price">
+              <span class="old-price">235.000 VNĐ</span>
+              <span class="new-price">220.000 VNĐ</span>
+            </p>
+            <p class="content">
+              "Chiếc bánh xinh đẹp với lớp mứt xoài vàng óng phía trên gây ấn tượng với khách hàng bởi màu sắc bắt mắt
+              cùng hương vị thơm ngon khó cưỡng."
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="new-product">
+          <a href="./productDetail.html">
+            <img src="../assets/img/ẢNH SẢN PHẨM MỚI/5.png" alt=""></a>
+          <div class="new-product__right">
+            <a href="./productDetail.html">
+              <p class="name">Vanilla Pink Cupcake</p>
+            </a>
+            <p class="price">
+              <span class="old-price">120.000 VNĐ</span>
+              <span class="new-price">125.000 VNĐ</span>
+            </p>
+            <p class="content">
+              "Chiếc bánh xinh đẹp với lớp mứt xoài vàng óng phía trên gây ấn tượng với khách hàng bởi màu sắc bắt mắt
+              cùng hương vị thơm ngon khó cưỡng."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#new_product" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon prev-newproduct" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#new_product" data-bs-slide="next">
+      <span class="carousel-control-next-icon next-newproduct" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+
+
+  <!-- Hot Product -->
+
+  <!-- Promotion Product -->
+  <p class="main-title" style="margin-top:50px">Sản phẩm khuyến mãi</p>
+  <div class="promotion-product"  style="display: flex; align-items: center; justify-content: space-between;">
+
+    <div class="list-product" *ngFor="let product of listProductPerPage"
+     >
+      <div class="product" style="width: 300px;">
+        <div class="img-product">
+          <a href="./detail/{{product._id}}"> <img src="{{product.Img[0]}}" style="height: 200px " alt=""></a>
+          <div class="cart-love">
+            <a href=""> <i class="fa-solid fa-cart-shopping"></i></a> <a href="#"> <i class="fa-solid fa-heart"></i></a>
+          </div>
+        </div>
+        <p class="name">{{product.Name}}</p>
+        <p class="price">
+          <span class="old-price">{{convertVND(+product.Variant[0].UnitPrice)}}</span>
+          <span class="new-price">{{convertVND(+product.Variant[0].PromotionPrice)}}</span>
+        </p>
+        <div><span class="star"> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </span><span>{{product.TotalRateing}}</span></div>
+      </div>
+    </div>
+
+    <!-- <div id="continute">
+      <a href="../html/listProduct.html">
+        <button type="button" class="btn btn-primary input">
+          Xem thêm sản phẩm
+        </button>
+      </a>
+    </div> -->
+  </div>
+
+  <!-- Comments -->
+
+  <div class="slider">
+    <div id="carouselComment" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="comments">
+            <div class="comments-left">
+              <div><img src="../assets/img/CUSTOMERS/ThuyTien.jpg" alt=""></div>
+              <div>Thùy Tiên</div>
+              <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <div class="comments-right">
+              “Shop ngon lắm ạ. Chất lượng rất tốt, shop tư vấn nhiệt tình. Bánh có thể để dùng lâu. Em dùng từ đầu
+              nhiệm kỳ đến hết nhiệm kỳ vẫn rất okela ạ. Anh Nawat cũng rất mê ạ, hãy ăn bánh của shop để mãi xinh như
+              tôi!”
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="comments">
+            <div class="comments-left">
+              <div><img src="../assets/img/thanhthuy.jpg" alt=""></div>
+              <div>Thanh Thùy</div>
+              <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <div class="comments-right">
+              “Shop ngon lắm ạ. Chất lượng rất tốt, shop tư vấn nhiệt tình. Bánh có thể để dùng lâu. Em dùng từ đầu
+              nhiệm kỳ đến hết nhiệm kỳ vẫn rất okela ạ. Anh Nawat cũng rất mê ạ, hãy ăn bánh của shop để mãi xinh như
+              tôi!”
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="comments">
+            <div class="comments-left">
+              <div><img src="../assets/img/thuyenthuyen.jpg" alt=""></div>
+              <div>Thuyên Thuyên </div>
+              <div class="star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                  class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            </div>
+            <div class="comments-right">
+              “Shop ngon lắm ạ. Chất lượng rất tốt, shop tư vấn nhiệt tình. Bánh có thể để dùng lâu. Em dùng từ đầu
+              nhiệm kỳ đến hết nhiệm kỳ vẫn rất okela ạ. Anh Nawat cũng rất mê ạ, hãy ăn bánh của shop để mãi xinh như
+              tôi!”
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselComment" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon prev-comment" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselComment" data-bs-slide="next">
+        <span class="carousel-control-next-icon next-comment" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+
+
+
+
+</div>
+<!-- Footer -->
+
+<div id="chatbox" onclick="showChatbox()">
+  <i class="fa-regular fa-message"></i>
+</div>
+<div id="phone">
+  <i class="fa-solid fa-phone"></i>
+</div>
+<div id="backtop" onclick="backToTop()">
+  <i class="fa-solid fa-angle-up"></i>
+</div>
+<div id="chatWrapper">
+  <div class="header-chatWrapper">
+    <img src="../assets/img/CUSTOMERS/QuangLinh.jpg" alt="">
+    <div id="close" onclick="btnclose()"><span><i class="fa-solid fa-minus"></i> </span></div>
+  </div>
+  <h4>Chat với Memory Bakery</h4>
+  <p>Xin chào! Chúng tôi có thể giúp gì cho bạn?</p>
+  <button class="button1">Tiếp tục dưới tên Linh</button>
+  <button class="button2">Tiếp tục dưới vai trò khách</button>
+</div>

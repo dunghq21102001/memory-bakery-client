@@ -1,0 +1,24 @@
+
+<div id="container text-center main">
+  <section class="hot-products">
+    <div class=" hot-product">
+      <div class=" products" *ngFor="let product of products">
+        <div class=" product">
+          <div class="img-product">
+            <a href="./detail/{{product._id}}"><img style="height: 200px " src="{{product.Img[0]}}"></a>
+            <div class="cart-love">
+              <a> <i class="fa-solid fa-cart-shopping"></i></a> <a href="#"> <i class="fa-solid fa-heart"></i></a>
+           </div>
+          </div>
+          <p class="name">{{product.Name}}</p>
+          <p class="price">
+            <span class="old-price">{{product.Variant[0].UnitPrice}}VND </span>
+            <span class="new-price">{{product.Variant[0].PromotionPrice}}VND</span>
+        </p>
+        <div><span class="star"> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </span><span>530</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+

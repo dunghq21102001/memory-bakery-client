@@ -1,0 +1,65 @@
+<div class="title">Đổi mật khẩu</div>
+<div class="container">
+  <div class="shadow-sm p-3 mb-5 bg-body rounded" *ngIf="user">
+    <div class="mb-3 row" >
+      <label for="inputPassword" class="col-sm-4 col-form-label">Mật khẩu hiện tại</label>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <input type="{{showPassword ? 'text' : 'password'}}" class="form-control " id="inputPassword" [(ngModel)]="currP" required>
+          <div class="input-group-append">
+            <button class="btn" type="button" (click)="toggleShowPassword('current')">
+              <i class="fa" [ngClass]="{'fa-eye': !showPassword, 'fa-eye-slash': showPassword}"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="newPassword" class="col-sm-4 col-form-label">Mật khẩu mới</label>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <input type="{{showNewPassword ? 'text' : 'password'}}" class="form-control " id="newPassword" [(ngModel)]="newP" required>
+          <div class="input-group-append">
+            <button class="btn" type="button" (click)="toggleShowPassword('new')">
+              <i class="fa" [ngClass]="{'fa-eye': !showNewPassword, 'fa-eye-slash': showNewPassword}"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-3 row">
+      <label for="newPassword" class="col-sm-4 col-form-label">Nhập lại mật khẩu mới</label>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <input type="{{showNewPassword ? 'text' : 'password'}}" class="form-control " id="newPassword" [(ngModel)]="newPAgain" required>
+          <div class="input-group-append">
+            <button class="btn" type="button" (click)="toggleShowPassword('reNew')">
+              <i class="fa" [ngClass]="{'fa-eye': !showReNewPassword, 'fa-eye-slash': showReNewPassword}"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Phần button -->
+    <div class="button">
+      <button (click)="changePass()" type="button" class="btn btn-primary input">
+        Lưu
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

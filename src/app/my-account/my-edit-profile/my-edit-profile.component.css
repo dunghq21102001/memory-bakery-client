@@ -1,0 +1,18 @@
+img.rounded {
+  object-fit: cover;
+  aspect-ratio: 3/4;
+  width: 200px;
+  border-radius: 40%!important;
+  margin-bottom: 20px;
+}
+.center {
+  position: relative; /* Thiết lập div cha là relative */
+}
+
+.file-input {
+  position: absolute; /* Thiết lập input là absolute */
+  left: 50%; /* Canh input về giữa theo trục X */
+  bottom: -10%; /* Đặt input ở phía dưới của div cha */
+  transform: translateX(-12%); /* Dịch chuyển input điều chỉnh vị trí */
+}
+

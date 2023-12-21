@@ -1,0 +1,50 @@
+
+ <body>
+    <div class="container" >
+      <div class="row px-3">
+        <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+          <div class="img-left d-none d-md-flex"></div>
+
+          <div class="card-body">
+            <div class="row-cols-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" onclick="comeBack()" class="bi bi-x-lg" viewBox="0 0 16 16">
+                  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                </svg>
+          </div>
+            <h3 class="title text-center mt-4">
+              Đăng nhập tài khoản
+            </h3>
+            <p style="color: red;" class="error">{{message}}</p>
+    <form class="form-box px-3" (ngSubmit)="login()" [formGroup]="loginForm" ><div class="form-group clearfix">
+
+    <div class="form-input">
+      <span><i class="fa-solid fa-user"></i></span>
+                    <input placeholder="Nhập tài khoản" class="form-control"  formControlName="userid" type="text"></div></div>
+    <div class="form-group clearfix">
+
+    <div class="form-input">
+      <span><i class="fa fa-key"></i></span>
+                    <input  placeholder="Nhập mật khẩu"  class="form-control" formControlName="password" type="password" ></div></div>
+
+                    <small *ngIf="loginForm.controls['password'].errors?.['minlength']">
+                      Mật khẩu phải có ít nhất 6 kí tự.
+                    </small>
+
+    <div class="col-xs-12 form-group text-right"><button class="btn btn-success" type="submit"><b> Đăng nhập</b></button></div>
+    <div class="text-right">
+      <a href="./forgotPassword" class="forget-link">
+        Quên mật khẩu?
+      </a>
+    </div>
+    <hr class="my-4">
+
+    <div class="text-center mb-2 "  style="font-family: 'Inter', sans-serif;">
+      Bạn chưa có tài khoản?
+      <a href="./register" class="register-link">
+        Đăng ký ngay!
+      </a>
+    </div>
+  </form></div></div>
+          </div>
+        </div>
+  </body>

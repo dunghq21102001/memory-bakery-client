@@ -1,0 +1,289 @@
+<div class="title">Đơn hàng của tôi</div>
+<div class="container text-center main">
+  <div class="row" >
+    <div class="col" *ngFor="let option of statusOptions">
+      <button (click)="filterOrders(option)" [ngClass]="{'btn-primary red': selectedStatus === option}" >
+        {{ option }}
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="shadow-sm p-3 mb-5 bg-body rounded">
+  <!-- Tất cả đơn hàng -->
+  <div *ngIf="selectedStatus === 'Tất cả'">
+    <div class="main1">
+      <div class="content" *ngFor="let order of filteredOrders">
+        <div class="title_info">
+          <div class="title">{{ formatOrderId(order._id) }}</div>
+          <div class="status">
+            <ng-container *ngIf="order.OrderStatus === 'Chờ xác nhận'">
+              <img src="/assets/img_account/waiting.png" alt="">
+            </ng-container>
+            <ng-container *ngIf="order.OrderStatus === 'Đang giao'">
+              <img src="/assets/img_account/delivering.png" alt="">
+            </ng-container>
+            <ng-container *ngIf="order.OrderStatus === 'Đã giao'">
+              <img src="/assets/img_account/shipped.png" alt="">
+            </ng-container>
+            <ng-container *ngIf="order.OrderStatus === 'Đã huỷ'">
+              <img src="/assets/img_account/delivery-cancelled.png" alt="">
+            </ng-container>
+            {{order.OrderStatus}}
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 40%;">Sản phẩm</th>
+              <th scope="col" style="width: 20%; text-align: center; padding: 0;">Số lượng</th>
+              <th scope="col" style="width: 20%;">Đơn giá</th>
+              <th scope="col" style="width: 30%;">Thành tiền</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let detail of order.Details;">
+                  <td>{{ detail.ProductName }}</td>
+                  <td style="text-align: center">{{ detail.Quantity }}</td>
+                  <td>{{ detail.UnitPrice | currency:'VND' }}</td>
+                  <td>{{ detail.LineTotal| currency:'VND' }}</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="button">
+                  <button class="btn btn-primary" [ngClass]="{'cancel-button': order.OrderStatus === 'Đã huỷ'}" (click)="getButtonClickAction(order)">
+                    {{ getButtonLabel(order) }}
+                  </button>
+                </div>
+
+              </td>
+              <td colspan="2" class="info right">Tổng số tiền: </td>
+              <td colspan="1" class="info">{{order.SubTotal | currency:'VND'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Chờ xác nhận -->
+  <div *ngIf="selectedStatus === 'Chờ xác nhận'">
+    <div class="main1">
+      <div class="content" *ngFor="let order of filteredOrders">
+        <div class="title_info">
+          <div class="title">{{ formatOrderId(order._id) }}</div>
+          <div class="status"><img src="/assets/img_account/waiting.png" alt=""> {{order.OrderStatus}}</div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 40%;">Sản phẩm</th>
+              <th scope="col" style="width: 20%; text-align: center; padding: 0;">Số lượng</th>
+              <th scope="col" style="width: 20%;">Đơn giá</th>
+              <th scope="col" style="width: 30%;">Thành tiền</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let detail of order.Details; ">
+                  <td>{{ detail.ProductName }}</td>
+                  <td style="text-align: center">{{ detail.Quantity }}</td>
+                  <td>{{ detail.UnitPrice | currency:'VND' }}</td>
+                  <td>{{ detail.LineTotal| currency:'VND' }}</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="button">
+                  <button  class="btn btn-primary" (click)="showOrderEdit(order._id)" >
+                    {{ getButtonLabel(order) }}
+                  </button>
+                </div>
+              </td>
+              <td colspan="2" class="info right">Tổng số tiền: </td>
+              <td colspan="1" class="info">{{order.SubTotal | currency:'VND'}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Đang giao hàng -->
+   <div *ngIf="selectedStatus === 'Đang giao'">
+    <div class="main1">
+      <div class="content" *ngFor="let order of filteredOrders">
+        <div class="title_info">
+          <div class="title">{{ formatOrderId(order._id) }}</div>
+          <div class="status"><img src="/assets/img_account/delivering.png" alt=""> {{order.OrderStatus}}</div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 40%;">Sản phẩm</th>
+              <th scope="col" style="width: 20%; text-align: center; padding: 0;">Số lượng</th>
+              <th scope="col" style="width: 20%;">Đơn giá</th>
+              <th scope="col" style="width: 30%;">Thành tiền</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let detail of order.Details; ">
+                  <td>{{ detail.ProductName }}</td>
+                  <td style="text-align: center">{{ detail.Quantity }}</td>
+                  <td>{{ detail.UnitPrice | currency:'VND' }}</td>
+                  <td>{{ detail.LineTotal| currency:'VND' }}</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="button">
+                  <button  class="btn btn-primary" >
+                    {{ getButtonLabel(order) }}
+                  </button>
+                </div>
+              </td>
+              <td colspan="2" class="info right">Tổng số tiền: </td>
+              <td colspan="1" class="info">{{order.SubTotal | currency:'VND'}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ <!-- Đã giao-->
+  <div *ngIf="selectedStatus === 'Đã giao'">
+    <div class="main1">
+      <div class="content" *ngFor="let order of filteredOrders">
+        <div class="title_info">
+          <div class="title">{{ formatOrderId(order._id) }}</div>
+          <div class="status"><img src="/assets/img_account/shipped.png" alt=""> {{order.OrderStatus}}</div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 40%;">Sản phẩm</th>
+              <th scope="col" style="width: 20%; text-align: center; padding: 0;">Số lượng</th>
+              <th scope="col" style="width: 20%;">Đơn giá</th>
+              <th scope="col" style="width: 30%;">Thành tiền</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let detail of order.Details; ">
+                  <td>{{ detail.ProductName }}</td>
+                  <td style="text-align: center">{{ detail.Quantity }}</td>
+                  <td>{{ detail.UnitPrice | currency:'VND' }}</td>
+                  <td>{{ detail.LineTotal| currency:'VND' }}</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="button">
+                  <button  class="btn btn-primary" [routerLink]="'/listProduct'" >
+                    {{ getButtonLabel(order) }}
+                  </button>
+                </div>
+              </td>
+              <td colspan="2" class="info right">Tổng số tiền: </td>
+              <td colspan="1" class="info">{{order.SubTotal | currency:'VND'}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Đã huỷ-->
+  <div *ngIf="selectedStatus === 'Đã huỷ'">
+    <div class="main1">
+      <div class="content" *ngFor="let order of filteredOrders">
+        <div class="title_info">
+          <div class="title">{{ formatOrderId(order._id) }}</div>
+          <div class="status"><img src="/assets/img_account/delivery-cancelled.png" alt=""> {{order.OrderStatus}}</div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" style="width: 40%;">Sản phẩm</th>
+              <th scope="col" style="width: 20%; text-align: center; padding: 0;">Số lượng</th>
+              <th scope="col" style="width: 20%;">Đơn giá</th>
+              <th scope="col" style="width: 30%;">Thành tiền</th>
+            </tr>
+          </thead>
+
+          <tbody >
+            <tr *ngFor="let detail of order.Details; ">
+                  <td>{{ detail.ProductName }}</td>
+                  <td style="text-align: center">{{ detail.Quantity }}</td>
+                  <td>{{ detail.UnitPrice | currency:'VND' }}</td>
+                  <td>{{ detail.LineTotal| currency:'VND' }}</td>
+            </tr>
+            <tr>
+              <td>
+                <div class="button">
+                  <button  class="btn btn-primary" (click)="showOrderCancel(order._id)" >
+                    {{ getButtonLabel(order) }}
+                  </button>
+                </div>
+              </td>
+              <td colspan="2" class="info right">Tổng số tiền: </td>
+              <td colspan="1" class="info">{{order.SubTotal | currency:'VND'}}</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showEditOrder" class="modal">
+  <div class="address-new">
+    <div class="title">Xác nhận huỷ đơn hàng {{ formatOrderId(selectedOrder._id) }} </div>
+    <label for="">Cho chúng tôi biết lý do bạn huỷ</label>
+    <select class="filter-options" [(ngModel)]="selectedOrder.Reason" (change)="onReasonChange()" class="form-select" aria-label="Lý do huỷ">
+      <option selected>Lý do huỷ</option>
+      <option value="Sai Phương thức thanh toán">Cần thay đổi phương thức thanh toán</option>
+      <option value="Chiết khấu không như mong đợi">Chiết khấu không như mong đợi</option>
+      <option value="Đơn đặt hàng được tạo do có sự nhầm lẫn">Đơn đặt hàng được tạo do có sự nhầm lẫn</option>
+      <option value="Phí giao hàng cao">Phí giao hàng cao</option>
+      <option value="Có giá tốt hơn">Có giá tốt hơn</option>
+      <option value="Thông tin giao hàng không chính xác">Thông tin giao hàng không chính xác</option>
+      <option value="Khác">Khác</option>
+    </select>
+    <div class="form-floating mb-3" *ngIf="selectedOrder.Reason === 'Khác'">
+      <input type="text" class="form-control" id="floatingInput" placeholder="Vui lòng điền lý do huỷ đơn" [(ngModel)]="otherReason" (input)="onReasonChange()">
+      <label for="floatingInput">Vui lòng điền lý do huỷ đơn:</label>
+    </div>
+    <button class="btn btn-primary" (click)="updateOrderStatus(selectedOrder._id,selectedOrder)">Xác nhận</button>
+  </div>
+</div>
+
+<div *ngIf="showCancelOrder" class="modal">
+  <div class="address-new">
+    <div class="title_info">
+      <div class="title">{{ formatOrderId(selectedOrder._id) }}</div>
+      <div class="status"><img src="/assets/img_account/delivery-cancelled.png" alt=""> {{selectedOrder.OrderStatus}}</div>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" style="width: 40%;">Sản phẩm</th>
+          <th scope="col" style="width: 20%; text-align: center; padding: 0;">Số lượng</th>
+          <th scope="col" style="width: 20%;">Đơn giá</th>
+          <th scope="col" style="width: 30%;">Thành tiền</th>
+        </tr>
+      </thead>
+
+      <tbody >
+        <tr *ngFor="let detail of selectedOrder.Details;">
+              <td>{{ detail.ProductName }}</td>
+              <td style="text-align: center">{{ detail.Quantity }}</td>
+              <td>{{ detail.UnitPrice | currency:'VND' }}</td>
+              <td>{{ detail.LineTotal| currency:'VND' }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p colspan="2" class="info right">Tổng số tiền: <span class="info">{{selectedOrder.SubTotal | currency:'VND'}}</span> </p>
+    <p>Lý do huỷ: {{selectedOrder.Reason}} </p>
+    <button  class="btn btn-primary">Mua lại</button>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+html{
+  font-family: Montserrat;
+  font-size: 15px;
+}
+.chinhsachbaomat{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-bottom: 100px;
+}
+hr{
+  width: 250px;
+  border: solid #C4C4C4;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+/* danhmuc */
+.danhmuc h2{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 500px;
+}
+.danhmuc-item{
+  margin-bottom: 15px ;
+}
+.danhmuc-item a{
+  text-decoration: none;
+  color: #EB7884;
+  font-size: 18px;
+  justify-content: center;
+}
+/* chinhsachbaomat */
+.content{
+  flex-basis: 900px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+.content h1{
+  margin-bottom: 30px;
+  text-align: justify;
+  color: #EB7884;
+  font-size: 30px;
+  text-align: center;
+}
+.content h3{
+  margin-bottom: 5px;
+}
+.content p{
+  margin-bottom: 5px;
+  line-height: 1.5;
+
+}

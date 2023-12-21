@@ -1,0 +1,165 @@
+<script src="image.ts" type="module"></script>
+<div class="body">
+    <div class="container text-center content-product">
+        <div class="row">
+            <div class="col-4 left-container">
+                <div class="img-display">
+                    <div class="img-showcase" style="width: 400px;height: 400px;">
+                        <img  src="{{product.Img[0]}}" alt="Không tìm thấy ảnh">
+                        <img src="{{product.Img[1]}}" alt="Không tìm thấy ảnh">
+                        <img src="{{product.Img[2]}}" alt="Không tìm thấy ảnh">
+                        <img src="{{product.Img[3]}}" alt="Không tìm thấy ảnh">
+                    </div>
+                </div>
+                <div class="img-select">
+                    <div class="img-item">
+                        <a data-id="1" >
+                            <img style="height: 70px;width: 70px;" src="{{product.Img[0]}}" alt="Không tìm thấy ảnh">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a data-id="2">
+                            <img style="height: 70px;width: 70px;" src="{{product.Img[1]}}" alt="Không tìm thấy ảnh">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a data-id="3">
+                            <img style="height: 70px;width: 70px;" src="{{product.Img[2]}}" alt="Không tìm thấy ảnh">
+                        </a>
+                    </div>
+                    <div class="img-item">
+                        <a data-id="4">
+                            <img style="height: 70px;width: 70px;" src="{{product.Img[3]}}" alt="Không tìm thấy ảnh">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8 right-container">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col title">
+                            {{product.Name}}
+                        </div>
+                    </div>
+                    <!-- Đánh sao -->
+                    <div class="row" style="text-align: left;">
+                        <div><span class="star star2"> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></span>
+                            <span>{{product.TotalRateing}}</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="price left" *ngIf="!isChangeValue">
+                            <span class="old-price">{{ convertVND(+product.Variant[0].UnitPrice) }} </span>
+                            <span class="new-price">{{ convertVND(product.Variant[0].PromotionPrice)}}</span>
+                        </p>
+                        <p class="price left"  *ngIf="isChangeValue">
+                          <span [class.isChoose]=" selectVariant.parent_id == product._id">
+                            <span class="old-price">
+                            {{
+                             convertVND(+selectVariant.UnitPrice)
+                            }}</span>
+                            <span  class="new-price">
+                              {{
+                             convertVND(+selectVariant.PromotionPrice)
+                            }}</span>
+                        </span>
+
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 left sub_title">
+                            Mô tả sản phẩm
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 left description">{{product.Description}}</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 left sub_title">
+
+                       <div style="display: flex; flex-wrap: nowrap;">
+                        <div class="sub_title" style="margin-right:20px ;"> Chọn Size:</div>
+                        <div *ngIf="!isChangeValue">
+
+                        </div>
+                        <div *ngFor="let v of product.Variant" >
+                          <button class="product-variation" [class.product-variation--selected]="selectVariant?.Size === v.Size && isChangeValue"
+                          (click)="isChoose(v.Size, product)">Size {{v.Size}}</button>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="quantity">
+                            <div class="sub_title">Số lượng</div>
+                            <div class="quantity-box">
+                                <button class="quantity-decrease" id="decrease" (click)="decreaseValue(quantity.value)">-</button>
+                                <input name="ngModel" [(ngModel)]="qty" type="text" value="1" class="quantity-input" id="quantity1" #quantity >
+
+                                <button class="quantity-increase" id="increase" (click)="increaseValue(quantity.value)">+</button>
+                                <div *ngIf="qty < 0" style="color: red;">Số lượng không hợp lệ!</div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-primary input" (click)="addToCart(product)" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Thêm vào giỏ hàng
+                            </button>
+
+                            <!-- Modal -->
+
+                        </div>
+
+                        <div class="col">
+                            <a href="./getcart">
+                                <button type="button" class="btn btn-primary input" (click)="addToCart(product)">Mua ngay</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="review">
+      <h4 style="margin-left: 100px;" class="sub_title left">Đánh giá sản phẩm</h4>
+      <div class="container text-center">
+          <div class="row">
+            <div class="col-1">
+              <img src="../assets/img/thanhthuy.jpg" alt="">
+            </div>
+            <div class="col-11">
+              <div class="col left" style="display:flex;font-weight: bold;">Thanh Thuỳ
+                  <div><span class="star star1"> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </span></div>
+              </div>
+              <div class="col left">Bánh kem ngon lắm luôn shop ơi. Ăn xong một bánh mà em lên cân quá trời luôn hihi. Mong shop ra nhiều bánh kem xinh đẹp nữa nha</div>
+            </div>
+          </div>
+      </div>
+  </div>
+    <h2 class="text-center text-white bg-dark p-3">Các loại bánh khác của shop</h2>
+    <div class="swiper mySwiper" id="products">
+          <div  class="swiper-wrapper products" >
+            <div class=" product swiper-slide" *ngFor="let product of products">
+              <div class="img-product">
+                  <a href="./detail/{{product._id}}"><img style="height: 200px " src="{{product.Img[0]}}"></a>
+                  <div class="cart-love">
+                    <a style="cursor: pointer;" (click)="addToCart1(product)"> <i class="fa-solid fa-cart-shopping"></i></a> <a href="#"> <i class="fa-solid fa-heart"></i></a>
+                  </div>
+              </div>
+              <p class="name">{{product.Name}}</p>
+              <p class="price">
+                <span class="old-price">{{convertVND(product.Variant[0].UnitPrice)}} </span>
+                <span class="new-price">{{convertVND(product.Variant[0].PromotionPrice)}}</span>
+              </p>
+              <div>
+                <span class="star"> <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i> </span><span>530</span>
+              </div>
+            </div>
+            </div>
+          <div class="swiper-pagination"></div>
+        </div>
+</div>
+

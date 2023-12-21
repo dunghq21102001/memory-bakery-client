@@ -1,0 +1,123 @@
+[
+  {
+    "context": ["/products"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+    },
+  {
+    "context": ["/products/category"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/products/rate"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+   "context": ["/products/price"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/cart"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/carts"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/newOrder"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/users"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/login"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/customer"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/address/list"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/address"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/order/list/"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/voucher/list/"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/product/list/"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/address/setDefault/"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  },
+  {
+    "context": ["/voucherCode"],
+    "target": "http://localhost:6868/",
+    "secure": true,
+    "changeOrigin":true,
+    "logLevel":"debug"
+  }
+]
+
+

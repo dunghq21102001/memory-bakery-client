@@ -1,0 +1,51 @@
+.title {
+  font-size: 40px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  margin-top: 0 !important;
+  max-width: 1000vw;
+  height: 100vh;
+}
+.background-voucher{
+  background-color: #f0b8be;
+  border: 2px solid rgb(249, 247, 247);
+  margin: 20px;
+  /* width: 450px; */
+}
+.voucher{
+  display: inline-flex;
+  border: 2px solid rgb(248, 247, 247);
+  margin: 30px;
+  background-color: white;
+  max-width: 470px;
+}
+.voucher .logo{
+  border-right: 2px dashed rgb(126, 121, 121);
+  padding: 43px 10px;
+}
+.discount{
+  margin-left: 10px;
+  padding: 10px;
+}
+.discount input{
+  background-color:#E75C6B   ;
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.list-voucher{
+  display: flex;
+  flex-wrap: wrap;
+}
+h5 {
+  font-size: 20px;
+  font-weight: bold;
+}
+hr {
+  margin: 5px 0 5px 0
+}
+.btn-input {
+  margin-top: 10px;
+ text-align: center;
+}

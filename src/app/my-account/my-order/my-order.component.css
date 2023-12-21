@@ -1,0 +1,122 @@
+:root {
+  --primary_color: #E75C6B;
+  --color_button: #F38A95;
+  --background-color: #F9F2F2;
+  --button: #F38A95;
+  --button_hover: #81C6E8;
+}
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+/* CSS cho title */
+.title {
+  font-size: 40px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.shadow-sm {
+  max-width: 90%;
+  margin: auto;
+}
+/* CSS cho Tất cả --> Chờ xác nhận */
+.row {
+  white-space: nowrap;
+  border: 3px solid var(--primary_color);
+  border-radius: 50px;
+  margin: 9px;
+  background-color: var(--sub_color);
+}
+.col {
+  border-left:3px solid var(--primary_color);
+  background-color: #FFEAE9;
+
+}
+.col:nth-child(1) {
+  border: none;
+  border-radius: 50px 0 0 50px;
+}
+.col:last-child {
+  border-radius: 0 50px 50px 0;
+}
+button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.status {
+  margin: auto;
+  margin: 10px !important;
+}
+.content{
+  border: 2px solid var(--primary_color);
+  border-radius: 50px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+/* CSS cho mã ID với Trạng thái chung 1 hàng */
+.title_info {
+  display: flex;
+  justify-content: space-between;
+}
+/* CSS Tổng số tiền */
+.info {
+  font-weight: bold;
+  font-size: 25px;
+  color: var(--primary_color);
+}
+.red {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #E75C6B
+}
+.btn {
+  background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 22px;
+}
+.right {
+  text-align: right;
+}
+.price {
+  flex: 1;
+  text-align: right;
+  margin-right: 7px;
+}
+.status img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  margin: auto;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.address-new {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  height: auto;
+  overflow-y: auto;
+}
+
+
+.modal label, select, input {
+  margin-bottom: 20px;
+}

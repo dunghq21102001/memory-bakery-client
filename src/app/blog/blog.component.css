@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,800');
+
+*{
+  padding: 0;
+  margin: 0;
+}
+html{
+  font-family: Montserrat;
+}
+/* banner */
+.banner{
+  margin-top: -70px;
+}
+.banner img{
+  width: 100%;
+  height: 480px;
+  object-fit: contain;
+}
+/*main*/
+.blogs{
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+/* baivietnoibat */
+.baivietnoibat{
+  display: flex;
+  flex-direction: column;
+  flex-basis: 500px;
+}
+.baivietnoibat h2{
+  font-size: 30px;
+  /* margin-left: 18px; */
+  font-weight: bold;
+}
+hr{
+  width: 440px;
+  border: solid #C4C4C4;
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+.baiviet-item{
+  margin-bottom: 15px ;
+  /* margin-left: 18px; */
+  display: flex;
+}
+.baiviet-img img{
+  width: 130px;
+  height: 130px;
+}
+.baiviet-mota{
+  float: right;
+  margin-left: 10px;
+  margin-top: -5px;
+  font-size: 15px;
+
+}
+.baiviet-tieude a{
+  text-decoration: none;
+  color: #EB7884;
+  font-size: 18px;
+  justify-content: center;
+
+}
+.baiviet-ngaydang p{
+  margin-bottom: 5px;
+}
+
+/* tintuc */
+.tintuc h1{
+  font-size: 45px;
+  text-align: left;
+}
+.tintuc-item{
+  margin: 20px 0px;
+  display: flex;
+}
+.tintuc-img img{
+  width: 200px;
+  height: 200px;
+}
+.tintuc-mota{
+  margin-left: 10px;
+  margin-top: -5px;
+}
+.tintuc-tieude a{
+  text-decoration: none;
+  color: #EB7884;
+  font-size: 28px;
+}
+.tintuc-tieude a:hover {
+  color:#81C6E8 ;
+}
+.baiviet-tieude a:hover {
+  color:#81C6E8 ;
+}
+.tintuc-nguoiviet{
+  font-size: 15px;
+}
+.tintuc-mieuta{
+  margin-top: 7px;
+  font-size: 17px;
+  text-align: justify;
+}
+.tintuc{
+  flex-basis: 900px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+}
+.sotrang{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.sotrang p {
+  cursor: pointer;
+}
+
+.active {
+  background-color: #81C6E8;
+  border-radius: 50%;
+  padding: 0 10px;
+  color: #fff;
+}
+
+.trundicate {
+  width:100%;
+
+  overflow:hidden;
+  line-height: 2rem;
+  max-height: 8rem;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 4;
+}

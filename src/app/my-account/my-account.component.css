@@ -1,0 +1,358 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex; /* Set display property to flex */
+  flex-direction: row; /* Set direction of the flex to row */
+  height: 100%; /* Set height to 100% to fill the whole screen */
+  margin: 20px 0 0 10px;
+  max-width: 100%;
+}
+
+.left-side {
+  flex-basis: 30%; /* Set the initial size of the left side to 30% */
+}
+
+.right-side {
+  flex: 1; /* Set the right side to take up the remaining space */
+  background-color: #fff; /* Set background color of right side */
+}
+.link-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+.link-btn:hover {
+  color: #81C6E8
+}
+.link-btn.active {
+  color: #E75C6B;
+}
+
+#nav-profile5.color >button {
+  color: red;
+}
+.left-side{
+  border: 2px solid #E75C6B;
+  border-radius: 50px;
+  height: fit-content;
+  width: 570px;
+}
+.left-side .nav{
+  font-size: 22px;
+}
+.body{
+  display: flex;
+  margin-top: 20px;
+}
+.profile{
+  display: flex;
+  padding: 20px;
+}
+.profile-right{
+  margin-left: 10px;
+  display: inline-block;
+}
+.profile img{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+i{
+  color: #E75C6B;
+}
+ol, ul {
+  padding-left: 2rem;
+}
+
+.nav {
+  font-size: 22px;
+}
+
+.right-side{
+  width: 100%;
+  padding: 0 20px;
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.main {
+    max-width: 1000px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+}
+input[type="file"]{
+    color: transparent;
+    font-size: 18px;
+}
+img {
+    width:60%;
+    height: 60%;
+    border-radius: 100px;
+}
+#formFile {
+    margin: 5px 0 0 27%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+.title {
+  font-size: 40px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p {
+  color: gray;
+  font-size: 15px;
+}
+
+.input {
+    background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin: 15px;
+    font-size: 22px;
+}
+
+.input:hover {
+    background-color: var(--button_hover);
+    color: black;
+}
+.button {
+  text-align: center;
+}
+.input1 {
+    background-color: #eee;
+    border-radius: 10px;
+    border: none;
+    padding: 10px 15px;
+
+    width: 400px;
+    height: 50px;
+    font-size: 14px;
+}
+.text-center img{
+    width: 200px;
+    border-radius: 40%!important;
+    margin-bottom: 20px;
+}
+.col-9{
+  border-right: 1px solid var(--primary_color);
+}
+#header{
+  background-color: white;
+  /* position: fixed; */
+  padding: 0px 5%;
+  top: 0;
+  left: 0;
+  right:0;
+  z-index: 99;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  height: 126px;
+  font-family: 'Montserrat', sans-serif;
+  position: sticky;
+  transition: top .2s ease;
+}
+#header.show{
+  top: -1000px;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: var(--hover_color)
+}
+#header a{
+  text-decoration: none;
+  color: var(--primary_color);
+}
+#header a:hover{
+  color: var(--hover_color);
+}
+/* header-top */
+.header-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.header-top img{
+  height: 80px;
+  width: 80px;
+}
+.header-top .btn-search .search{
+  width: 500px;
+  height: 50px;
+  border: 0 white;
+  border-radius: 20px ;
+  background-color: #FFEAE9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+.header-top .btn-search{
+  position: relative;
+}
+.header-top .btn-search .ti-search {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #FFEAE9;
+  border-radius: 50%;
+  margin: 2px;
+  border:  none;
+}
+.header-top .btn-search .ti-search:hover{
+  color: var(--hover_color);
+}
+.btn-search input {
+
+  padding: 0 60px 0 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.header-top{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
+
+}
+.header-top .logo img{
+  width: 200px;
+}
+.right-header-top{
+  display: flex;
+  /* justify-content: center; */
+  /* align-items: center; */
+
+}
+.right-header-top div{
+  margin: 0 20px;
+  width: max-content;
+
+}
+
+
+.right-header-top li a{
+  padding: 0 24px;
+  line-height: 46px;
+  display: block;
+}
+
+
+.right-header-top .account{
+  position: relative;
+}
+.right-header-top .account .sub-nav{
+  display: none;
+  min-width: 240px;
+  position: absolute;
+  top:100%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  border-radius: 5px;
+  z-index: 1;
+  padding-left: 0;
+}
+.right-header-top .account:hover .sub-nav{
+  display: block;
+}
+.right-header-top .account .sub-nav a:hover{
+  background-color: bisque;
+  color: var(--hover_color);
+}
+
+
+
+
+
+/* .header-bottom {
+  display: flex;
+  flex-wrap: nowrap;
+  height: 46px;
+} */
+.header-bottom{
+  overflow:hidden;
+  height: 46px;
+  display: flex;
+  justify-content: space-around;
+
+}
+ul{
+  list-style: none;
+}
+.nav > li{
+  display: inline-block;
+}
+
+.nav >li > a{
+  font-weight: bold;
+  margin: 0 26px;
+  position: relative;
+}
+.nav li a{
+  padding: 0 5px;
+  line-height: 46px;
+  display: block;
+}
+
+
+.header-bottom .nav >li >a::after{
+  content: "";
+  height: 3px;
+  background-color: var(--hover_color);
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out;
+}
+.header-bottom .nav li a:hover::after{
+  width: 100%;
+  transform: scaleX(1);
+}
+.now>a{
+  color: var(--hover_color)!important;
+}
+
+.header-bottom .sub-nav{
+  display: none;
+  min-width: 250px;
+  position: absolute;
+  top:100%;
+  margin-left: 37px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding-left: 0;
+  border-radius: 5px;
+  z-index: 3;
+}
+
+.nav{
+  display: inline-block;
+}
+.nav li:hover .sub-nav{
+  display: block;
+}
+.nav .sub-nav li:hover a{
+  background-color: bisque;
+  color: var(--hover_color);
+}
+.nav>li:hover>a{
+  color: var(--hover_color);
+}
+

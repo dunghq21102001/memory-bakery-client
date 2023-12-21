@@ -1,0 +1,74 @@
+<body>
+  <div class="container">
+      <div class="row px-3">
+          <div class="col-lg-10 col-xl-9 card flex-row mx-auto px-0">
+            <div class="img-left d-none d-md-flex"></div>
+
+            <div class="card-body">
+              <div class="row-cols-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="black" onclick="comeBack()" class="bi bi-x-lg" viewBox="0 0 16 16">
+                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                  </svg>
+            </div>
+              <h3 class="title text-center mt-4">
+                Đăng ký tài khoản
+              </h3>
+              <form class="form-box "  >
+                <div class="form-input">
+                  <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                  </svg></span>
+
+
+                  <div class="form-input">
+                    <span><i class="fa-solid fa-user"></i></span>
+                    <input type="text"  #name="ngModel" name="username" [(ngModel)]="user.UserName" placeholder="Tên đăng nhập" required></div>
+                  </div>
+                <div class="form-input">
+                  <span><i class="fa-solid fa-phone"></i></span>
+                  <input type="text" #name="ngModel" name="Phone" [(ngModel)]="user.Phone" placeholder="Nhập số điện thoại" required pattern="[0-9]{10}">
+                </div>
+                <div class="form-input">
+                  <span><i class="fa fa-key"></i></span>
+                  <input type="password" id="password"  name="password" [(ngModel)]="user.Password" minlength="6" required #password="ngModel"
+                  class="form-control" placeholder="Nhập mật khẩu" [class.is-valid]="password.invalid && password.touched">
+                </div>
+                <div>
+                  <td colspan="2">
+                    <div *ngIf="password.errors && (password.dirty || password.touched)">
+                      <small *ngIf="password.errors['minlength']">Mật khẩu phải chứa ít nhất 6 kí tự</small>
+                    </div>
+                  </td>
+                </div>
+                <div class="form-input">
+                  <span><i class="fa fa-key"></i></span>
+                  <input [(ngModel)]="rePassword" type="password" name="repassword" placeholder="Nhập lại mật khẩu" id="repassword" #repassword="ngModel" required>
+                </div>
+
+                <div class="mb-3">
+
+                  <div class="custom-control custom-checkbox">
+                    <input [(ngModel)]="AgreeToTerms" type="checkbox" class="custom-control-input" id="cb1" name="ngModel" required>
+                    <label class="custom-control-label" for="cb1" aria-required="true" style="font-family: 'Inter', sans-serif ; color: #E75C6B;">Tôi đồng ý với các điều khoản của Memory</label>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <a style="cursor: pointer;" (click)="postUser()" class="register">
+                    Đăng ký
+                  </a>
+                </div>
+                <hr class="my-4">
+
+                <div class="text-center mb-2" style="font-family: 'Inter', sans-serif ;">
+                  Bạn đã có tài khoản?
+                  <a href="./getlogin" class="login-link">
+                    Đăng nhập tại đây!
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+  </div>
+  <script src="login.js"></script>
+
+</body>

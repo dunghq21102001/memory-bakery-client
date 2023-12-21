@@ -1,0 +1,63 @@
+<div class="container" >
+  <div class="left-side">
+    <div class="profile" *ngIf="user">
+      <img src="{{user.Image}}" alt="">
+      <div class="profile-right" >
+          <h3>{{user.FullName}}</h3>
+          <button class="link-btn" (click)="onSelectSubComponent('editProfile')" [class.active]="selectedSubComponent === 'editProfile'"><i class="fa-solid fa-pen"></i> Sửa hồ sơ</button>
+      </div>
+    </div>
+    <hr>
+    <div class="nav">
+      <ul>
+        <li>
+          <button class="link-btn" (click)="showSubList = !showSubList"><i class="fa-regular fa-user"></i> Tài khoản của tôi</button>
+          <div id="sub_nav" *ngIf="showSubList">
+            <ul>
+              <li id="sub-nav_profile1">
+                <button class="link-btn" (click)="onSelectSubComponent('details')" [class.active]="selectedSubComponent === 'details'">Tài khoản của tôi</button>
+              </li>
+              <li id="sub-nav_profile2">
+                <button class="link-btn" (click)="onSelectSubComponent('changePassword')" [class.active]="selectedSubComponent === 'changePassword'">Đổi mật khẩu</button>
+              </li>
+              <li id="sub-nav_profile3">
+                <button class="link-btn" (click)="onSelectSubComponent('address')" [class.active]="selectedSubComponent === 'address'">Địa chỉ</button>
+              </li>
+            </ul>
+          </div>
+        </li>
+
+        <li id="sub-nav_profile4">
+          <button class="link-btn" (click)="onSelectSubComponent('orders')" [class.active]="selectedSubComponent === 'orders'"> <i style="padding-right: 6px" class="fa-regular fa-clipboard"></i> Đơn hàng</button>
+        </li>
+
+        <li id="sub-nav_profile5">
+          <button class="link-btn" (click)="onSelectSubComponent('voucher')" [class.active]="selectedSubComponent === 'voucher'"> <i style="padding-right: 6px" class="fa-solid fa-tag"></i> Voucher</button>
+        </li>
+
+        <li id="sub-nav_profile6">
+          <button class="link-btn" (click)="onSelectSubComponent('love')" [class.active]="selectedSubComponent === 'love'"> <i style="padding-right: 6px" class="fa-regular fa-heart"></i> Sản phẩm yêu thích</button>
+        </li>
+
+        <li id="sub-nav_profile7">
+          <button class="link-btn" (click)="onSelectSubComponent('review')" [class.active]="selectedSubComponent === 'review'"> <i style="padding-right: 6px" class="fa-regular fa-comments"></i> Đánh giá</button>
+        </li>
+
+        <li id="sub-nav_profile8">
+          <button class="link-btn" (click)="logout()" ><i style="padding-right: 6px" class="fa-solid fa-arrow-right-from-bracket"></i> Đăng xuất</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="right-side">
+    <ng-container [ngSwitch]="selectedSubComponent">
+      <app-my-profile *ngSwitchCase="'details'"></app-my-profile>
+      <app-my-pass-word *ngSwitchCase="'changePassword'"></app-my-pass-word>
+      <app-my-address *ngSwitchCase="'address'" ></app-my-address>
+      <app-my-order *ngSwitchCase="'orders'"></app-my-order>
+      <app-my-edit-profile *ngSwitchCase="'editProfile'"></app-my-edit-profile>
+      <app-my-voucher *ngSwitchCase="'voucher'"></app-my-voucher>
+      <app-my-product *ngSwitchCase="'love'"></app-my-product>
+    </ng-container>
+  </div>
+</div>

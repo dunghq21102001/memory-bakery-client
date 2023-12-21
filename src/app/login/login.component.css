@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,800');
+
+:root{
+  --primary_color: #e75c6b;
+  --button_color:#F38a95;
+  --background_color:#f9f2f2;
+  --hover_color:#81C6E8;
+}
+body{
+   height: 100vh;
+   background: #FFEAE9 !important;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
+ .row-cols-1{
+  align-content: center;
+  float: right;
+  padding: 3px 3px;
+
+}
+ .card{
+   overflow: hidden;
+   border: 0 !important;
+   border-radius: 20px !important;
+   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+ }
+
+ .img-left{
+   width: 45%;
+   background: url('/assets/img/login.jpg') center;
+   background-size: cover;
+ }
+
+ .card-body{
+   padding: 2rem;
+ }
+
+ .title{
+  font-family: 'Montserrat', serif;
+   margin-bottom: 1rem;
+   font-weight: 600;
+
+ }
+
+ .form-input{
+   position: relative;
+ }
+
+ .form-input input{
+   font-family: 'Inter', sans-serif;
+    width: 100%;
+    height: 45px;
+    padding-left: 40px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 2px solid #EDEDED;
+    border-radius: 10px;
+    outline: none;
+    background: transparent;
+ }
+
+ .form-input span{
+   position: absolute;
+   top: 10px;
+   padding-left: 15px;
+   color: #000;
+ }
+
+ .form-input input::placeholder{
+   color: #6c757d;
+   padding-left: 0px;
+ }
+
+ .form-input input:focus, .form-input input:valid{
+   border: 2px solid #E75C6B;
+ }
+
+ .form-input input:focus::placeholder{
+   color: #454b69;
+ }
+
+ .custom-checkbox .custom-control-input:checked, .custom-control-label::before{
+   background-color: #E75C6B !important;
+   border: 0px;
+ }
+
+ .form-box button[type="submit"]{
+   font-family: 'Montserrat', sans-serif;
+   font-size: 20px;
+   border: none;
+   cursor: pointer;
+   border-radius: 10px;
+   background: #E75C6B;
+   color: #fff;
+   transition: 0.5s;
+   padding: 8px;
+ }
+ .btn{
+  width: 430px;
+ }
+
+ .form-box button[type="submit"]:hover{
+   background: #81C6E8;
+   color: #000;
+ }
+
+ .forget-link, .register-link{
+  font-family: 'Montserrat', serif;
+   color: #E75C6B;
+   font-weight: bold;
+ }
+ .text-right{
+  text-align: right;
+  margin-top: 20px;
+ }
+
+ .forget-link:hover, .register-link:hover{
+   color: #81C6E8;
+   text-decoration: none;
+ }
+
+ .form-box .btn-social{
+   color: white !important;
+   border: 0;
+   font-weight: bold;
+ }
+
+ .form-box .btn-facebook{
+  font-family: 'Montserrat', serif;
+   background: #4866a8;
+ }
+
+ .form-box .btn-google{
+  font-family: 'Montserrat', serif;
+   background: #da3f34;
+ }
+
+
+ .form-box .btn-facebook:hover{
+   background: #81C6E8;
+ }
+
+ .form-box .btn-google:hover{
+   background: #bf3b31;
+ }
+
+ .btn-login{
+  background-color: var(--button_color);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+ }
+ .btn-login:hover{
+  color: #000;
+  text-decoration: none;
+  background-color: var(--hover_color);
+ }
+ a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  color: var(--hover_color)
+}

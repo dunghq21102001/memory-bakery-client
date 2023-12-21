@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,800');
+:root{
+  --primary_color: #e75c6b;
+  --button_color:#F38a95;
+  --background_color:#f9f2f2;
+  --hover_color:#81C6E8;
+}
+*{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+}
+

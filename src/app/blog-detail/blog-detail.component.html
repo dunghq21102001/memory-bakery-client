@@ -1,0 +1,37 @@
+<div class="banner">
+  <img src="../assets/img/blog.png" usemap="#readnow">
+</div>
+<div class="blogs">
+  <div class="baivietnoibat">
+      <h2>Bài viết nổi bật</h2>
+      <hr>
+      <div *ngFor="let o of outstandingList" class="baiviet-item">
+          <div class="baiviet-img">
+              <img src="../assets/img/blog1.jpg" alt="">
+          </div>
+          <div class="baiviet-mota">
+              <div class="baiviet-tieude">
+                <a [href]="'./blog/'+o._id"><b>{{o.Title}}</b></a>
+              </div>
+              <div class="baiviet-ngaydang">
+                  <p>Ngày đăng:{{convertDate(o.CreateDate)}}</p>
+              </div>
+              <div class="baiviet-tacgia">
+                  <p>Người viết: {{o.Writer}}</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="tintuc">
+      <h1 class="title">{{blog.Title}}</h1>
+      <div class="info"> Người Viết: {{blog.Writer}} -{{convertDate(blog.CreateDate)}}</div>
+      <div class="content">{{blog.Content}}</div>
+  </div>
+</div>
+<figure>
+  <map name="readnow">
+      <area href="./blogdetail.html"
+          coords="253,385,263,366,266,363,353,363,393,363,437,366,447,367,463,372,449,399,266,398,250,366"
+          shape="poly">
+  </map>
+</figure>

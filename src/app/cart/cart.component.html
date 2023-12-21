@@ -1,0 +1,155 @@
+<div class="body">
+  <div class="main">
+      <div class="navigation">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Giỏ hàng</li>
+              </ol>
+            </nav>
+      </div>
+      <div class="cart-container">
+          <div class="cart-title">
+              <h4>Giỏ hàng</h4>
+          </div>
+          <div class="line"></div>
+          <div class="cart-info-container">
+              <div class="cart-header">
+                  <div><input type="checkbox" name="all" id="all" checked></div>
+                  <div>Sản phẩm</div>
+                  <div>Đơn giá</div>
+                  <div>Số lượng</div>
+                  <div>Thành tiền</div>
+                  <div>Xoá</div>
+              </div>
+
+              <div class="line"></div>
+              <div *ngIf="!data || data.length == 0" class="text-center text-[30px]">
+                <i style="font-size: 150px;" class="fa-solid fa-cart-arrow-down"></i>
+                <h2 >Không có sản phẩm nào trong giỏ hàng</h2>
+              </div>
+
+              <div class="cart-product-container" *ngFor="let item of data">
+                  <div class="cart-product">
+                      <!-- chekbox -->
+                      <div><input type="checkbox" name="pr1" id="pr1" checked></div>
+                      <!-- Tên sản phẩm -->
+                      <div style="cursor: pointer;" class="cart-info" [routerLink]="['/detail',item._id]" >
+                          <div>
+                              <img [src]="item.Img[0]" style="border-radius: 50%" width="100%">
+                          </div>
+                          <div class="product-description">
+                              <b>{{item.Name}} ({{item.size.Size}}) </b>
+                          </div>
+                      </div>
+                      <!-- Giá sản phẩm -->
+                      <div class="price-info">
+                          {{convertVND(item.size.PromotionPrice)}}
+                      </div>
+                      <!-- Số lượng -->
+                      <div class="quantity-box">
+                        <input max="100" min="1" maxlength="2" minlength="1" class="w-[50px] pl-2 border-[1px] border-solid border-black outline-none"
+                          type="number" (blur)="updateQty(item)" [(ngModel)]="item.qty">
+                    </div>
+
+                      <!-- Thành tiền -->
+                      <div class="price-info">
+                          <div class="lineTotal">{{convertVND(item.size.PromotionPrice * item.qty)}}</div>
+                      </div>
+
+                      <!-- Button xoá -->
+                      <div (click)="removeItem(item)">
+                          <img src="../assets/img/trash.png" style="width: 25px">
+                      </div>
+                  </div>
+
+
+
+                  </div>
+              </div>
+          </div>
+             <hr>
+
+          <div class="container text-center">
+              <div class="row2">
+                  <div>
+                      <div style="
+                      padding: 10px  ; margin-bottom: 10px;" class="row-">
+                        <h4 class="col left-title">
+                          Mã giảm giá
+                        </h4>
+                      </div>
+                      <div>
+                          <div class="voucher-info" style="width: 600px">
+                      <div>
+                        <input type="text" placeholder="Nhập vào mã giảm giá" name="ngModel" #code  id="input-voucher" [(ngModel)]="voucherCode" (keyup) ="changeState()">
+                      </div>
+                    <div>
+                        <input type="button" value="ÁP DỤNG" id="apply" [disabled]="isApplying" (click)="getPromotion(voucherCode,calculateTotalPrice())">
+                    </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-5 payment">
+                      <div class="row">
+                        <div class="col-7 left-title">Tổng số tiền (tạm tính)</div>
+                        <div class="col-5 right-title">
+                          <div class="row">
+                            <div class="col-12" style="font-weight:bold;">{{convertVND(calculateTotalPrice())}}</div>
+                            <!-- <div class="col-4 left-title">VNĐ</div> -->
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-7 left-title">Giảm giá</div>
+                          <div class="col-5 right-title">
+                            <div class="row">
+                              <div class="col-12" style="font-weight:bold">{{convertVND(discountMessage)}}</div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="row total-payment">
+                          <div class="col-7 left-title">Thành tiền</div>
+                          <div class="col-5 right-title">
+                            <div class="row">
+                              <div class="col-12 total1" >{{ convertVND(calculateTotalPrice()-discountMessage)}}</div>
+                              <!-- <div class="col-4">VNĐ</div> -->
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <hr>
+
+          <div class="button">
+          <div class="button_left">
+              <!-- Chèn link vào -->
+              <a href="./main.html">
+                  <button type="button" class="btn btn-primary input">
+                      Quay lại mua hàng
+                  </button>
+              </a>
+
+
+                  <button type="button" (click)="deleteAll()" class="btn btn-primary input">
+                      Xoá hết
+                   </button>
+
+
+          </div>
+
+          <div class="button_right">
+              <a href="./checkout" >
+                  <button type="button" class="btn btn-primary input" (click)="postCart()">
+                      Đặt hàng
+                  </button>
+              </a>
+          </div>
+          </div>
+      </div>
+  </div>

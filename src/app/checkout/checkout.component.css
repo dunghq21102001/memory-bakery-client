@@ -1,0 +1,1117 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,800');
+/* CSS của modal New Address */
+
+:root {
+    --primary_color: #E75C6B;
+    --color_button: #F38A95;
+    --background-color: #F9F2F2;
+    --button: #F38A95;
+    --button_hover: #81C6E8;
+}
+
+.main-3 {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    max-width: auto;
+}
+/* CSS modal */
+.modal-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    text-align: justify;
+    color: var(--primary_color);
+    font-weight: 500;
+}
+
+.modal .input {
+    font-size: 14px;
+}
+
+.rounded {
+    margin-bottom: 0 !important;
+}
+.title {
+    padding: 10px;
+}
+
+.line {
+    background-color: var(--primary_color);
+    height: 1px;
+    margin: 5px 0 5px 0;
+}
+
+.name {
+    font-weight: bold;
+    color: black;
+}
+
+.form__row {
+    padding: 10px;
+}
+
+.form__row1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.form__row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.form__row3 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+input, select {
+    border: 1px solid var(--hover);
+    border-radius: 20px;
+    cursor: pointer;
+    height: 25px;
+    vertical-align: middle;
+    outline: none;
+
+}
+
+input:focus, select:focus {
+    border: 1px solid var(--primary_color);
+}
+
+#fname {
+    margin-right: 25px;
+}
+
+#phone {
+    margin-left: 25px;
+}
+
+.detail {
+    height: 50px;
+}
+
+#row2 {
+    display: flex;
+ }
+ .city {
+     height: auto;
+
+ }
+
+ .district {
+     height: auto;
+
+ }
+
+ .wards {
+     height: auto;
+
+ }
+#default {
+    accent-color: var(--primary_color)
+}
+.default {
+    margin-left: 30px;
+}
+.input {
+    background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin: 15px;
+    font-size: 22px;
+
+}
+
+.input:hover {
+    background-color: var(--button_hover);
+    color: black;
+}
+.remove-all {
+    width: 100px;
+    margin-left: 20px;
+}
+.button {
+    display: flex;
+    justify-content: right;
+}
+
+.button_left {
+    flex:1;
+}
+.button_right {
+    flex:1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.button a {
+    text-decoration: none;
+}
+
+/* CSS của Update address */
+
+:root {
+    --primary_color: #E75C6B;
+    --color_button: #F38A95;
+    --background-color: #F9F2F2;
+    --button: #F38A95;
+    --button_hover: #81C6E8;
+}
+
+
+.main-2 {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    max-width: auto;
+}
+
+.title {
+    padding: 10px;
+}
+
+.line {
+    background-color: var(--primary_color);
+    height: 1px;
+    margin: 5px 0 5px 0;
+}
+
+.name {
+    font-weight: bold;
+    color: black;
+}
+
+.form__row {
+    padding: 10px;
+}
+
+.form__row1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+.form__row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.form__row3 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+input, select {
+    border-radius: 20px;
+    cursor: pointer;
+    height: 25px;
+    vertical-align: middle;
+    outline: none;
+    line-height: 25px;
+}
+input:focus, select:focus {
+    border: 1px solid var(--primary_color);
+}
+
+#row1 {
+    display: flex;
+}
+.fname {
+    margin-right: 25px;
+    height: auto;
+
+}
+.phone {
+    height: auto;
+}
+
+.detail {
+    height: 50px;
+}
+.form-control, .form-select {
+    font-size: 20px;
+}
+.city {
+    height: auto;
+}
+
+.district {
+    height: auto;
+    margin-left: 10px;
+}
+
+.wards {
+    height: auto;
+    margin-left: 10px;
+}
+
+.note {
+    font-size: 15px;
+    margin-left: 10px;
+}
+#default {
+    accent-color: var(--primary_color);
+    width: 15px;
+    height: 15px;
+}
+.default {
+    margin-left: 30px;
+}
+
+.input {
+    background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin: 15px;
+    font-size: 22px;
+
+}
+
+.input:hover {
+    background-color: var(--button_hover);
+    color: black;
+}
+.remove-all {
+    width: 100px;
+    margin-left: 20px;
+}
+.button {
+    display: flex;
+    justify-content: right;
+}
+
+.button_left {
+    flex:1;
+}
+.button_right {
+    flex:1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.button a {
+    text-decoration: none;
+}
+
+::placeholder {
+    color: black;
+}
+
+/* CSS myAddress */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css?family=Inter:400,800');
+:root {
+    --primary_color: #E75C6B;
+    --color_button: #F38A95;
+    --background-color: #F9F2F2;
+    --button: #F38A95;
+    --button_hover: #81C6E8;
+}
+
+
+.main-sub {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    max-width: 1000px;
+    font-size: 20px;
+}
+
+.line {
+    background-color: var(--primary_color);
+    height: 1px;
+    margin: 5px 0 5px 0;
+}
+
+.name {
+    font-weight: bold;
+    color: black;
+}
+.info {
+    color: gray;
+}
+.def {
+    border: 1px solid var(--primary_color);
+    color: var(--primary_color);
+    width: 70px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.button a {
+    color: var(--primary_color);
+    text-decoration: none;
+}
+.button a:hover {
+    text-decoration: underline;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 0.1fr 2fr 0.5fr;
+}
+
+input[type=radio] {
+    cursor: pointer;
+}
+
+#default1, #info2 {
+    accent-color: var(--primary_color)
+}
+
+/* .add_button {
+    border: 1px solid var(--primary_color);
+    border-radius: 20px;
+    width: 26%;
+} */
+.add {
+    border: 1px solid var(--primary_color);
+    border-radius: 20px;
+    background-color: var(--sub_color);
+    width: 250px;
+    padding: 5px;
+    margin-top: 10px;
+}
+.add:hover {
+    color: black;
+    background-color: var(--button_hover);
+    transition:cubic-bezier(0.23, 1, 0.320, 1)
+}
+.add button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+}
+.add button:hover {
+    background: fixed;
+}
+.input {
+    background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin: 15px;
+    font-size: 22px;
+
+}
+
+.input:hover {
+    background-color: var(--button_hover);
+    color: black;
+}
+.remove-all {
+    width: 100px;
+    margin-left: 20px;
+}
+.button {
+    display: flex;
+}
+
+.button_left {
+    flex:1;
+}
+.button_right {
+    flex:1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.button a {
+    text-decoration: none;
+}
+
+/* Modal */
+
+.modal-button a {
+    font-size: 16px;
+}
+.modal{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: linear 0.1s;
+    display: none;
+
+}
+.modal.open{
+    display: flex;
+}
+/*Lớp phủ đen đen */
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+    --growth-from:0.7s;
+    --growth-to:1;
+    margin: auto;
+    padding: auto;
+    /* display: none; */
+
+}
+
+.activate{
+    display: block;
+}
+
+/* Modal 2 */
+.modal2{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: linear 0.1s;
+    display: none;
+
+}
+.modal2.open{
+    display: flex;
+}
+/*Lớp phủ đen đen */
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+    --growth-from:0.7s;
+    --growth-to:1;
+    margin: auto;
+    padding: auto;
+    /* display: none; */
+}
+.modal__inner{
+    margin: 20px;
+
+}
+.activate{
+    display: block;
+}
+
+/* Modal 3 */
+.modal3{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: linear 0.1s;
+    display: none;
+}
+.modal3.open{
+    display: flex;
+}
+.modal4{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: linear 0.1s;
+    display: none;
+}
+.modal4.open{
+    display: flex;
+}
+/*Lớp phủ đen đen */
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+    --growth-from:0.7s;
+    --growth-to:1;
+    margin: auto;
+    padding: auto;
+    /* display: none; */
+
+}
+.modal__inner{
+    margin: 20px;
+
+}
+.activate{
+    display: block;
+}
+.main-title {
+    width: 100%;
+    font-size: 30px;
+    color: var(--primary_color);
+    font-weight: bold;
+}
+
+.main-input{
+    background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 22px;
+    margin: 15px;
+
+}
+
+.main-input:hover {
+    background-color: var(--button_hover);
+    color: black;
+}
+.input_add {
+    margin: 5px;
+    font-size: 16px;
+    color: black;
+    background-color: var(--color_button);
+}
+.list1 {
+    margin-top: 26px;
+    margin-bottom: 20px;
+}
+.list2 {
+    margin-top: 26px;
+}
+
+
+.body {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    display: flex;
+    margin-top: 0 !important;
+}
+.main1 {
+    margin: auto;
+    margin-top: 35px;
+}
+/* CSS cho title */
+#main h4 {
+    width: 100%;
+    font-size: 40px;
+    color: var(--primary_color);
+    font-weight: bold;
+    margin: auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.row h4 {
+    font-weight: bold;
+    color: var(--primary_color);
+    font-size: 26px;
+}
+/* CSS cho sub title Địa chỉ, phương thức */
+.sub_title {
+    font-size: 26px;
+    color: var(--primary_color);
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+.line {
+    background-color: var(--primary_color);
+    height: 1px;
+}
+/* CSS cho address */
+#address, #method, #order_detail {
+    padding: 20px;
+}
+.line1 {
+    height: 3px;
+    width: 100%;
+    background-position-x: -30px;
+    background-size: 116px 3px;
+    background-image: repeating-linear-gradient(45deg,#6fa6d6,#6fa6d6 33px,transparent 0,transparent 41px,#f18d9b 0,#f18d9b 74px,transparent 0,transparent 82px);
+}
+
+/* Thanh điều hướng */
+.navigation {
+    margin-top: 15px;
+    width: auto;
+    height: 35px;
+    background-color: var(--background-color);
+}
+
+ol {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    line-height: 35px;
+    margin-left: 10px;
+}
+ol li {
+    margin-left: 10px;
+    font-size: 14px ;
+}
+
+
+
+/* CSS cho ship */
+.ship_method {
+    border: 2px solid var(--primary_color);
+    margin: auto;
+    background-color: var(--background-color);
+    border-radius: 25px;
+}
+
+.payment_method {
+    border: 2px solid var(--primary_color);
+    background-color: var(--background-color);
+    margin: auto;
+    border-radius: 25px;
+}
+
+.ship_method .title, .payment_method .title {
+    text-align: center;
+}
+.change a {
+    color: var(--primary_color);
+}
+
+.ship {
+    display: flex;
+    margin: 10px auto 40px auto;
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr;
+    margin: 10px;
+}
+
+.price-info {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+}
+
+.price {
+    text-align: right;
+    /* margin-right: 25%; */
+}
+
+.currency {
+    text-align: left;
+    margin-left: 10px;
+}
+
+.option_payment {
+    display: grid;
+    grid-template-columns: 0.5fr 5fr;
+    margin: 10px;
+}
+
+.payment_method{
+    margin-left: 40px;
+}
+.left {
+    text-align: left;
+}
+
+.right {
+    text-align: right;
+}
+
+.order_title {
+    color: var(--primary_color);
+    font-weight: bold;
+    padding: 10px;
+}
+.row-header .order_title {
+    color: white !important;
+    background-color: var(--primary_color);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Mặc định */
+.default p {
+    border: 1px solid var(--primary_color);
+    color: var(--primary_color);
+    font-weight: bold;
+    width: 80px;
+    height: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+.form-check-label {
+    display: flex;
+    margin-left: 10px;
+}
+
+.address_change a {
+    text-decoration: underline;
+    color: var(--primary_color);
+}
+.address_change a:hover {
+    color: red;
+    font-weight: bold;
+}
+/* Căn giữa title */
+:root {
+    --height: 100px
+}
+.row-info {
+    height: var(--height);
+    margin-bottom: 20px;
+}
+
+.info-center {
+    line-height: var(--height);
+}
+
+.img {
+    text-align: right;
+    padding: 0;
+    padding-top: 0;
+}
+.img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
+.input-reminder {
+    height: 150px;
+}
+
+
+::placeholder {
+    word-break: break-all;
+}
+.right-title {
+    text-align: right;
+}
+
+.payment-info {
+    font-size: 22px;
+}
+
+.total-payment {
+    font-size: 25px !important;
+    color: var(--primary_color);
+    font-weight: bold;
+}
+
+input[type=radio] {
+    accent-color: var(--primary_color);
+    width: 15px;
+    height: 15px;
+}
+.input {
+    background-color: var(--primary_color);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin: 15px;
+    font-size: 22px;
+
+}
+
+.input:hover {
+    background-color: var(--button_hover);
+    color: black;
+}
+.remove-all {
+    width: 100px;
+    margin-left: 20px;
+}
+.button {
+    display: flex;
+}
+
+.button_left {
+    flex:1;
+}
+.button_right {
+    flex:1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+
+/* Modal */
+.modal{
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: linear 0.1s;
+    display: none
+
+}
+.modal.open{
+    display: flex;
+}
+/*Lớp phủ đen đen */
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+    --growth-from:0.7s;
+    --growth-to:1;
+    margin: auto;
+    padding: auto;
+    /* display: none; */
+
+}
+.modal__inner{
+    margin: 20px;
+
+}
+.activate{
+    display: block;
+}
+/* Animation */
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes growth {
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal 2 */
+/* Modal */
+.modal2{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: linear 0.1s;
+    display: none;
+
+}
+.modal2.open{
+    display: flex;
+}
+/*Lớp phủ đen đen */
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+    --growth-from:0.7s;
+    --growth-to:1;
+    margin: auto;
+    padding: auto;
+    /* display: none; */
+
+}
+.modal__inner{
+    margin: 20px;
+
+}
+.activate{
+    display: block;
+}
+
+/* Modal 3 */
+/* Modal */
+.modal3{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    animation: linear 0.1s;
+    display: none;
+
+}
+.modal3.open{
+    display: flex;
+}
+/*Lớp phủ đen đen */
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal__body{
+    width: 50%;
+    height: auto;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    border-radius: 5px;
+    animation: growth linear 0.1s;
+    --growth-from:0.7s;
+    --growth-to:1;
+    margin: auto;
+    padding: auto;
+    /* display: none; */
+
+}
+.modal__inner{
+    margin: 20px;
+
+}
+.activate{
+    display: block;
+}
+
+.payment .row {
+    --height:40px;
+    height: var(--height);
+    line-height: var(--height);
+}
+.col-12 {
+    font-size: 23px;
+}
+.payment{
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);;
+}
+
+.payment .row {
+    font-family: 'Montserrat', sans-serif;
+}
+.left-title {
+    text-align: left;
+    font-size: 26px;
+}
+.right-title {
+    text-align: right;
+}
+.total-payment {
+    font-size: 23px;
+    font-weight: bold;
+    color: var(--primary_color);
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.row2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#container1 {
+    margin: 20px 0;
+}
+
+.input-reminder textarea {
+    font-family: 'Inter', sans-serif;
+    margin-left: 20px;
+    height: 150px;
+}
+
+#title-checkout{
+  color: white;
+  background-color: #E75C6B;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 20px 10px;
+}
+
+.qr-code {
+  display: block;
+}
+
+#DOB-checkout:checked ~ .qr-code {
+  display: none;
+}
