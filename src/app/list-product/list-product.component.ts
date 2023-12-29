@@ -18,6 +18,7 @@ export class ListProductComponent {
   listProductPerPage: any = []
 
 
+  searchQueryReceive: any = ''
   product: IProduct[] = [];
   products: any;
   cart = []
@@ -25,6 +26,9 @@ export class ListProductComponent {
   errMessage: string = ''
   constructor(private route: ActivatedRoute,public _service: ProductAPIService, public _cart: CartService) {
     this.getList()
+    this.searchQueryReceive= this.route.snapshot.paramMap.get("searchQuery")
+   
+    
     this.route.queryParams.subscribe((params) => {
       const category = params['category'];
       this.getListProductByCategory(category, 1);})
@@ -40,10 +44,19 @@ export class ListProductComponent {
         for (let i = (fpage - 1) * this.perPage; i < (fpage * this.perPage); i++) {
           if (data[i]) this.listProductPerPage.push(data[i])
         }
+
+        if(this.searchQueryReceive != '' && this.searchQueryReceive != null && this.searchQueryReceive != undefined) {
+          this.getListBySearchQuery()
+        }
       },
       error: (err) => { this.errMessage = err }
     })
   }
+  getListBySearchQuery() {
+    const finalList = this.listProductPerPage.filter((item:any) => item.Name.includes(this.searchQueryReceive));
+    this.listProductPerPage = finalList
+  }
+
   getListProductByCategory(Category: any,fpage: any = 1) {
     this._service.getListProductByCategory(Category).subscribe({
       next: (data: IProduct[]) => {

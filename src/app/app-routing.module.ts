@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:"aboutUs",component:AboutUsComponent},
   {path:"contact",component:ContactComponent},
   {path:"blog",component:BlogComponent},
-  {path:"listProduct",component:ListProductComponent},
+  {path:"listProduct/:searchQuery",component:ListProductComponent},
   {path:"productdetail",component:ProductDetailComponent},
   {path:"promotion",component:PromotionComponent},
   {path:"getcart",component:CartComponent},

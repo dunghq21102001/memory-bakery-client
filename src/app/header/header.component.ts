@@ -25,7 +25,11 @@ export class HeaderComponent {
   cart = []
   Category: any;
   isActive = false;
+  values = '';
 
+  onKey(event: any) {
+    this.values += event.target.value;
+  }
   constructor(public _service: ProductAPIService, public _cart: CartService,private accountService: MyAccountService,private router: Router, private authService: AuthService,private authGuard:AuthGuard) {
     this.login=this.authGuard.isLoggedIn()
     this.accountService.getUser().subscribe({
@@ -57,6 +61,13 @@ export class HeaderComponent {
     this.authService.logout();
     alert('Bạn đã đăng xuất');
     window.location.reload()
+  }
+
+  search() {
+    if(this.values.trim() == '') return alert('Bạn phải nhập từ khoá bất kỳ để tìm kiếm')
+    this.router.navigate(
+        ['/listProduct', this.values] 
+    ) 
   }
   getListProductByCategory(Category: any,fpage: any = 1) {
     this._service.getListProductByCategory(Category).subscribe({
