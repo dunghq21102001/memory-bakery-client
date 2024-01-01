@@ -53,7 +53,9 @@ export class ListProductComponent {
     })
   }
   getListBySearchQuery() {
-    const finalList = this.listProductPerPage.filter((item:any) => item.Name.includes(this.searchQueryReceive));
+    const finalList = this.listProductPerPage.filter((item:any) => item.Name.toLowerCase().includes(this.searchQueryReceive.toLowerCase()));
+    console.log(finalList);
+    
     this.listProductPerPage = finalList
   }
 

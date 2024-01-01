@@ -28,7 +28,7 @@ export class HeaderComponent {
   values = '';
 
   onKey(event: any) {
-    this.values += event.target.value;
+    this.values = event.target.value;
   }
   constructor(public _service: ProductAPIService, public _cart: CartService,private accountService: MyAccountService,private router: Router, private authService: AuthService,private authGuard:AuthGuard) {
     this.login=this.authGuard.isLoggedIn()
