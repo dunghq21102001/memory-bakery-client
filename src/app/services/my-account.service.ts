@@ -143,7 +143,7 @@ export class MyAccountService {
       headers:headers,
       responseType:"text"
     }
-    return this._http.get<any>("http://localhost:6868/address/setDefault/"+token+"/"+AddressId,requestOptions).pipe(
+    return this._http.put<any>("http://localhost:6868/address/setDefault/"+token+"/"+AddressId,requestOptions).pipe(
       map(res => res),
       retry(3),
       catchError(this.handleError)

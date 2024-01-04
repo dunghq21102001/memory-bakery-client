@@ -71,7 +71,7 @@ input, select {
     border: 1px solid var(--hover);
     border-radius: 20px;
     cursor: pointer;
-    height: 25px;
+    height: 40px;
     vertical-align: middle;
     outline: none;
 
@@ -213,7 +213,7 @@ input:focus, select:focus {
 input, select {
     border-radius: 20px;
     cursor: pointer;
-    height: 25px;
+    height: 40px;
     vertical-align: middle;
     outline: none;
     line-height: 25px;
@@ -1115,3 +1115,5 @@ input[type=radio] {
 #DOB-checkout:checked ~ .qr-code {
   display: none;
 }
+
+

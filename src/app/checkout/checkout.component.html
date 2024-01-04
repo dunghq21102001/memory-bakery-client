@@ -1,17 +1,17 @@
 <div class="navigation">
   <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
-        <li class="breadcrumb-item"><a href="./cart">Giỏ hàng</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
-      </ol>
-    </nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="">Trang chủ</a></li>
+      <li class="breadcrumb-item"><a href="./cart">Giỏ hàng</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Thanh toán</li>
+    </ol>
+  </nav>
 </div>
 
 <!-- Phần body -->
-<div class="body" id="main" >
+<div class="body" id="main">
   <div class="main1">
-    <div >
+    <div>
       <h4 class="main-title" style="text-align: left;">Thanh toán</h4>
     </div>
 
@@ -24,75 +24,76 @@
       <div class="row" style="margin-bottom:20px ;">
         <div class="col-3 address_title">{{selectedAddresss?.AddressName}} ({{selectedAddresss?.AddressPhone}})</div>
         <div class="col-5 address_info">
-            {{selectedAddresss?.DetailAddress}}, {{selectedAddresss?.Ward}}, {{selectedAddresss?.Town}}, {{selectedAddresss?.City}}
+          {{selectedAddresss?.DetailAddress}}, {{selectedAddresss?.Ward}}, {{selectedAddresss?.Town}},
+          {{selectedAddresss?.City}}
         </div>
-        <div class="col-1 default">
-            <span class="def">{{selectedAddresss?.AddressType ? 'Mặc định' : ''}}</span>
-        </div>
+        <!-- <div class="col-1 default">
+          <span class="def">{{selectedAddresss?.AddressType ? 'Mặc định' : ''}}</span>
+        </div> -->
         <div class="col-2 address_change">
-          <button  (click)="showModal()">Thay đổi</button>
+          <button (click)="showModal()">Thay đổi</button>
         </div>
       </div>
       <div class="line1"></div>
     </div>
 
-    
+
 
     <!-- Ship -->
     <div class="container text-center" id="method">
       <div class="row">
         <div class="col-5 ship_method">
-        <div class="title sub_title">Phương thức vận chuyển</div>
-        <div class="line"></div>
-        <div class="ship_option">
+          <div class="title sub_title">Phương thức vận chuyển</div>
+          <div class="line"></div>
+          <div class="ship_option">
             <div class="option">
-                <div><input type="radio" name="ship" id="DOB-method" ></div>
-                <div class="des left">Giao hàng tận nơi</div>
-                <div class="price-info">
-                    <div class="price">
-                    20.000
-                    </div>
-                    <div class="currency">
-                    VNĐ
-                    </div>
+              <div><input type="radio" name="ship" id="DOB-method"></div>
+              <div class="des left">Giao hàng tận nơi</div>
+              <div class="price-info">
+                <div class="price">
+                  20.000
                 </div>
+                <div class="currency">
+                  VNĐ
+                </div>
+              </div>
             </div>
             <div class="option">
-                <div><input type="radio" name="ship" id="store-method"></div>
-                <div class="des left">Lấy tại cửa hàng</div>
-                <div class="price-info">
-                    <div class="price">
-                    0
-                    </div>
-                    <div class="currency">
-                    VNĐ
-                    </div>
+              <div><input type="radio" name="ship" id="store-method"></div>
+              <div class="des left">Lấy tại cửa hàng</div>
+              <div class="price-info">
+                <div class="price">
+                  0
                 </div>
+                <div class="currency">
+                  VNĐ
+                </div>
+              </div>
             </div>
-        </div>
+          </div>
         </div>
 
         <div class="col-1">
         </div>
         <!-- Phương thức thanh toán -->
         <div class="col-5 payment_method">
-        <div class="title sub_title">Phương thức thanh toán</div>
-        <div class="line"></div>
-        <div class="ship_option">
+          <div class="title sub_title">Phương thức thanh toán</div>
+          <div class="line"></div>
+          <div class="ship_option">
             <div class="option_payment">
-                <div><input type="radio" name="payment" id="DOB-checkout" ></div>
-                <div class="des left">Thanh toán khi nhận hàng (COD)</div>
+              <div><input type="radio" name="payment" id="DOB-checkout"></div>
+              <div class="des left">Thanh toán khi nhận hàng (COD)</div>
             </div>
             <div class="option_payment">
-                <div><input type="radio" name="payment" id="visa-method" ></div>
-                <div class="des left">Thẻ ATM/InternetBanking/Visa/Master/JCB qua cổng VNPAY</div>
+              <div><input type="radio" name="payment" id="visa-method"></div>
+              <div class="des left">Thẻ ATM/InternetBanking/Visa/Master/JCB qua cổng VNPAY</div>
             </div>
 
             <div class="option_payment">
-                <div><input type="radio" name="payment" id="momo-method"></div>
-                <div class="des left">Ví Momo</div>
+              <div><input type="radio" name="payment" id="momo-method"></div>
+              <div class="des left">Ví Momo</div>
             </div>
-        </div>
+          </div>
         </div>
       </div>
     </div>
@@ -101,7 +102,7 @@
 
     <div class="container text-center" id="order_detail">
       <div class="row row-header">
-      <div class="col-1 "></div>
+        <div class="col-1 "></div>
         <div class="col-1 order_title "></div>
         <div class="col-3 order_title ">
           Sản phẩm
@@ -121,12 +122,13 @@
 
 
 
-      <div class="row row-info"  *ngFor="let item of data">
+      <div class="row row-info" *ngFor="let item of data">
         <div class="col-1"></div>
         <div class="col-1 img">
           <img [src]="item.Img[0]" style="border-radius: 50%" width="100%">
         </div>
-        <div style="margin: auto;" class="col-3 info-center left"> <b><span >{{item.Name}}</span> ({{item.size.Size}}) </b></div>
+        <div style="margin: auto;" class="col-3 info-center left"> <b><span>{{item.Name}}</span> ({{item.size.Size}})
+          </b></div>
         <div style="margin: auto;" class="col-2 info-center"> {{convertVND(item.size.PromotionPrice)}}</div>
         <div style="margin: auto;" class="col-2 info-center">{{item.qty}}</div>
         <div style="margin: auto;" class="col-2 info-center">{{convertVND(item.size.PromotionPrice * item.qty)}}</div>
@@ -138,378 +140,385 @@
 
     <hr>
 
-    <div class="container text-center" id="container1" >
+    <div class="container text-center" id="container1">
       <div class="row2">
-          <div class="col-4">
-              <div style="
+        <div class="col-4">
+          <div style="
               padding: 10px  ; margin-bottom: 10px;" class="row">
-                <h4 class="col left-title" style="font-size: 26px;">
-                  Lời nhắc
-                </h4>
-              </div>
-              <div class="">
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Hãy để lại những lời bạn muốn nhắn gửi đến Memory nhé!" [(ngModel)]="order.Note"></textarea>
-              </div>
+            <h4 class="col left-title" style="font-size: 26px;">
+              Lời nhắc
+            </h4>
           </div>
-          <div class="col-5 payment">
+          <div class="">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+              placeholder="Hãy để lại những lời bạn muốn nhắn gửi đến Memory nhé!" [(ngModel)]="order.Note"></textarea>
+          </div>
+        </div>
+        <div class="col-5 payment">
+          <div class="row">
+            <div class="col-7 left-title">Tổng tiền hàng</div>
+            <div class="col-5 right-title">
               <div class="row">
-                <div class="col-7 left-title">Tổng tiền hàng</div>
-                <div class="col-5 right-title">
-                  <div class="row">
-                    <div class="col-12" style="font-weight:bold;">{{ convertVND(calculateTotalPrice()) }}</div>
-                    <!-- <div class="col-4 left-title">VNĐ</div> -->
-                  </div>
+                <div class="col-12" style="font-weight:bold;">{{ convertVND(calculateTotalPrice()) }}</div>
+                <!-- <div class="col-4 left-title">VNĐ</div> -->
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-7 left-title">Giảm giá</div>
+            <div class="col-5 right-title">
+              <div class="row">
+                <div class="col-12" style="font-weight:bold">{{convertVND(discountMessage)}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-7 left-title">Phí vận chuyển</div>
+            <div class="col-5 right-title">
+              <div class="row">
+                <div class="col-12" style="font-weight:bold" id="shipping-fee" contenteditable="true">
                 </div>
               </div>
-
-              <div class="row">
-                  <div class="col-7 left-title">Giảm giá</div>
-                  <div class="col-5 right-title">
-                    <div class="row">
-                      <div class="col-12" style="font-weight:bold">{{convertVND(discountMessage)}}</div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="row">
-                  <div class="col-7 left-title">Phí vận chuyển</div>
-                  <div class="col-5 right-title">
-                    <div class="row">
-                      <div class="col-12" style="font-weight:bold"  id="shipping-fee" contenteditable="true">
-                      </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="row total-payment">
-                  <div class="col-7 left-title">Tổng thanh toán</div>
-                  <div class="col-5 right-title">
-                    <div class="row">
-                      <div class="col-12 total1" >{{ convertVND(calculateTotalPrice()+shippingFeeValue) }} </div>
-                      <!-- <div class="col-4">VNĐ</div> -->
-                    </div>
-                </div>
-              </div>
+            </div>
           </div>
+
+          <div class="row total-payment">
+            <div class="col-7 left-title">Tổng thanh toán</div>
+            <div class="col-5 right-title">
+              <div class="row">
+                <div class="col-12 total1">{{ convertVND(calculateTotalPrice()+shippingFeeValue) }} </div>
+                <!-- <div class="col-4">VNĐ</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
-  </div>
+    </div>
     <hr>
 
     <div class="button">
       <div class="button_left">
-          <!-- Chèn link vào -->
-          <a href="./cart.html">
-              <button type="button" class="btn btn-primary input">
-                  Quay lại giỏ hàng
-              </button>
-          </a>
+        <!-- Chèn link vào -->
+        <a href="./cart.html">
+          <button type="button" class="btn btn-primary input">
+            Quay lại giỏ hàng
+          </button>
+        </a>
       </div>
 
       <div class="button_right">
-          <a>
-              <button type="button" (click)="showModal4()" class="btn btn-primary input">
-                  Hoàn tất đơn hàng
-              </button>
-          </a>
+        <a>
+          <button type="button" (click)="showModal4()" class="btn btn-primary input">
+            Hoàn tất đơn hàng
+          </button>
+        </a>
       </div>
-      </div>
+    </div>
   </div>
 </div>
 
-  <div class="modal">
-    <div class="modal__overlay"></div>
-    <div class="modal__body">
-        <div class="modal__inner">
-            <div class="main-sub">
-              <div class="shadow-sm p-3 mb-5 bg-body rounded">
-                <h1 class="modal-title">Địa chỉ của tôi</h1>
-                <div class="container" *ngFor="let address of addresses">
-                  <div class="row" >
-                    <div class="col-1 mt-0 p-0">
-                      <input class="form-check-input" type="radio" checked name="inlineRadioOptions" id="inlineRadio1" [checked]="address.AddressType === 'Default'" (change)="CheckDefaultAddress(address)">
-                    </div>
-                    <div class="col-8">
-                      <span class="name">{{address.AddressName}}</span> | {{address.AddressPhone}} | <span class="def">{{address.AddressType ? 'Mặc định' : ''}}</span> <br>
-                      {{address.DetailAddress}}, {{address.Ward}}, {{address.Town}}, {{address.City}}
-                    </div>
-                    <div class="col-3">
-                      <button class="btn btn-link" (click)="showModal2()" (click)="hideModal()">Cập nhật</button> <span style="color:#E75C6B">|</span>
-                      <button class="btn btn-link" (click)="deleteAddress(address._id)">Xoá</button>
-                    </div>
-                  </div>
-                  <hr>
-                </div>
-                <div>
-                  <button type="modal-button" class="btn btn-primary input_add main-input" (click)="showAddModel()">
-                    <i (click)="showAddModel()" class="fa-solid fa-plus"></i>
-                    <span (click)="showAddModel()" >Thêm địa chỉ mới nha</span>
-                </button>
-                </div>
-
-
-
-
-
-
-                  <div class="button">
-                      <a  (click)="hideModal()">
-                          <button type="modal-button" class="btn btn-primary main-input" >
-                              Huỷ
-                          </button>
-                      </a>
-
-                      <a  (click)="hideModal()">
-                          <button type="modal-button" class="btn btn-primary main-input" >
-                              Xác nhận
-                          </button>
-                      </a>
-                  </div>
-
+<div class="modal">
+  <div class="modal__overlay"></div>
+  <div class="modal__body">
+    <div class="modal__inner">
+      <div class="main-sub">
+        <div class="shadow-sm p-3 mb-5 bg-body rounded">
+          <h1 class="modal-title">Địa chỉ của tôi</h1>
+          <div class="container" *ngFor="let address of addresses">
+            <div (click)="chooseDefault(address?._id)" class="row">
+              <div class="col-1 mt-0 p-0">
+                <input class="form-check-input" type="radio" checked name="inlineRadioOptions" id="inlineRadio1"
+                  [checked]="address.AddressType === 'Default'" (change)="CheckDefaultAddress(address)">
               </div>
+              <div class="col-8">
+                <span class="name">{{address.AddressName}}</span> | {{address.AddressPhone}} | <span
+                  class="def">{{address.AddressType ? 'Mặc định' : ''}}</span> <br>
+                {{address.DetailAddress}}, {{address.Ward}}, {{address.Town}}, {{address.City}}
+              </div>
+              <div class="col-3">
+                <!-- <button class="btn btn-link" (click)="showModal2()" (click)="hideModal()">Cập nhật</button> <span
+                  style="color:#E75C6B">|</span>
+                <button class="btn btn-link" (click)="deleteAddress(address._id)">Xoá</button> -->
+              </div>
+            </div>
+            <hr>
           </div>
+          <div>
+            <button type="modal-button" class="btn btn-primary input_add main-input" (click)="showAddModel()">
+              <i (click)="showAddModel()" class="fa-solid fa-plus"></i>
+              <span (click)="showAddModel()">Thêm địa chỉ mới</span>
+            </button>
+          </div>
+
+
+
+
+
+
+          <div class="button">
+            <a (click)="hideModal()">
+              <button type="modal-button" class="btn btn-primary main-input">
+                Huỷ
+              </button>
+            </a>
+
+            <a (click)="updateTypeAddress()">
+              <button type="modal-button" class="btn btn-primary main-input">
+                Xác nhận
+              </button>
+            </a>
+          </div>
+
         </div>
+      </div>
     </div>
   </div>
+</div>
 <div *ngIf="showAddAddress" class="modal">
   <div class="address-new">
     <div class="title">Địa chỉ mới</div>
     <p>Để đặt hàng, vui lòng thêm địa chỉ nhận hàng</p>
     <div class="information">
-      <form >
+      <form>
         <div class="form__row form__row1">
-          <input type="text" class="form-control" name="fname" id="fname" placeholder="Họ và tên" required  [(ngModel)]="address.AddressName">
-          <input type="text"class="form-control" name="phone" id="phone" placeholder="Số điện thoại" required  [(ngModel)]="address.AddressPhone">
+          <input type="text" class="form-control" name="fname" id="fname" placeholder="Họ và tên" required
+            [(ngModel)]="address.AddressName">
+          <input type="text" class="form-control" name="phone" id="phone" placeholder="Số điện thoại" required
+            [(ngModel)]="address.AddressPhone">
         </div>
 
         <!-- Dòng 2 -->
         <div class="form__row form__row2">
           <div class="col">
-            <select id="city" class="form-select form-select-sm mb-3" required  [(ngModel)]="address.City" name="city" (change)="onCityChange()">
+            <select id="city" class="form-select form-select-sm mb-3" required [(ngModel)]="address.City" name="city"
+              (change)="onCityChange()">
               <option value="">Chọn tỉnh/thành phố</option>
               <option *ngFor="let city of cities" [value]="city.Name">{{ city.Name }}</option>
             </select>
-        </div>
+          </div>
 
-        <div class="col">
-          <select class="form-select form-select-sm mb-3" id="district" required  [(ngModel)]="address.Town" name="district" (change)="onDistrictChange()">
-            <option value="">Chọn quận/huyện</option>
-            <option *ngFor="let district of districts" [value]="district.Name">{{ district.Name }}</option>
-          </select>
-        </div>
+          <div class="col">
+            <select class="form-select form-select-sm mb-3" id="district" required [(ngModel)]="address.Town"
+              name="district" (change)="onDistrictChange()">
+              <option value="">Chọn quận/huyện</option>
+              <option *ngFor="let district of districts" [value]="district.Name">{{ district.Name }}</option>
+            </select>
+          </div>
 
-        <div class="col">
-          <select class="form-select form-select-sm mb-3" id="ward" [(ngModel)]="address.Ward" name="ward" >
-            <option value="">Chọn phường/ xã</option>
-            <option *ngFor="let w of Wards" [value]="w.Name">{{ w.Name }}</option>
-          </select>
-        </div>
+          <div class="col">
+            <select class="form-select form-select-sm mb-3" id="ward" [(ngModel)]="address.Ward" name="ward">
+              <option value="">Chọn phường/ xã</option>
+              <option *ngFor="let w of Wards" [value]="w.Name">{{ w.Name }}</option>
+            </select>
+          </div>
         </div>
 
         <!-- Dòng 3 -->
         <div class="col">
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="DetailAddress" placeholder="Địa chỉ cụ thể" [(ngModel)]="address.DetailAddress" ></textarea>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="DetailAddress"
+            placeholder="Địa chỉ cụ thể" [(ngModel)]="address.DetailAddress"></textarea>
         </div>
 
         <div class="button">
           <button type="button" class="btn btn-primary input" (click)="closeAddressNew()">
-                  Trở lại
+            Trở lại
           </button>
           <button type="button" class="btn btn-primary input" (click)="postAddress()">
             Hoàn thành
-        </button>
+          </button>
         </div>
       </form>
     </div>
   </div>
 </div>
-  <div class="modal2">
-      <div class="modal__overlay"></div>
-      <div class="modal__body">
-        <div class="modal__inner">
-            <div class="main-3">
-                <div class="title">
-                    <span class="modal-title">Cập nhật địa chỉ</span> <br>
-                </div>
-                <div class="main-3">
-                    <form action="#" method="get">
-                        <div class="form__row form__row1" id="row1">
-                            <input type="text" class="form-control fname" id="exampleFormControlInput1 fname" value="Phạm Quang Linh">
-                            <input type="email" class="form-control phone" id="exampleFormControlInput1 phone" value="(+84) 773928913">
-                        </div>
-
-                        <div class="form__row form__row2" id="row2">
-                            <select class="form-select city" aria-label="Default select example">
-                                <option value="bd">Tỉnh Bình Dương</option>
-                                <option value="hcm" selected>Thành phố Hồ Chí Minh</option>
-                            </select>
-
-                            <select class="form-select district" aria-label="Default select example">
-                                <option value="td" selected>Quận Thủ Đức</option>
-                                <option value="q12">Quận 12</option>
-                                <option value="q1">Quận 1</option>
-                                <option value="q9">Quận 9</option>
-                                <option value="gv">Quận Gò Vấp</option>
-                                <option value="bth">Quận Bình Thành</option>
-                                <option value="da">Thành phố Dĩ An</option>
-                                <option value="ta">Thành phố Thuận An</option>
-                                <option value="tu">Thị xã Tân Uyên</option>
-                              </select>
-
-                            <select class="form-select wards" aria-label="Default select example">
-                                <option value="" selected>Phường Linh Xuân</option>
-                                <option value="">Phường Linh Tây</option>
-                                <option value="">Phường Linh Trung</option>
-                                <option value="">Phường Hiệp Phú</option>
-                                <option value="">Phường Bến Thành</option>
-                                <option value="">Phường Bến Nghé</option>
-                                <option value="">Phường Dĩ An</option>
-                                <option value="">Phường Tân Đông Hiệp </option>
-                            </select>
-                        </div>
-
-                        <div class="form__row form__row3">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Địa chỉ cụ thể"></textarea>
-
-                        </div>
-                    </form>
-
-                    <div class="default">
-                        <input type="checkbox" name="default" id="default" checked> Đặt làm địa chỉ mặc định
-                    </div>
-
-                    <div class="button">
-                      <a  (click)="hideModal2()" (click)="showModal()">
-                          <button type="modal-button" class="btn btn-primary main-input" >
-                              Trở lại
-                          </button>
-                      </a>
-
-                      <a (click)="hideModal2()" (click)="showModal()">
-                          <button type="modal-button" class="btn btn-primary main-input" >
-                              Hoàn thành
-                          </button>
-                      </a>
-                    </div>
-                </div>
-              </div>
-        </div>
-
-      </div>
-  </div>
-
-<div class="modal4">
+<div class="modal2" [ngClass]="{'open': isShowModelAdd}">
   <div class="modal__overlay"></div>
   <div class="modal__body">
-    <div >
-        <div class="main-3">
-            <div id="title-checkout">
+    <div class="address-new">
+      <div class="title">Địa chỉ mới</div>
+      <p>Để đặt hàng, vui lòng thêm địa chỉ nhận hàng</p>
+      <div class="information">
+        <form>
+          <div class="form__row form__row1">
+            <input type="text" class="form-control" name="fname" id="fname" placeholder="Họ và tên" required
+              [(ngModel)]="address.AddressName">
+            <input type="text" class="form-control" name="phone" id="phone" placeholder="Số điện thoại" required
+              [(ngModel)]="address.AddressPhone">
+          </div>
 
+          <!-- Dòng 2 -->
+          <div class="form__row form__row2">
+            <div class="col">
+              <select id="city" class="form-select form-select-sm mb-3" required [(ngModel)]="address.City" name="city"
+                (change)="onCityChange()">
+                <option value="">Chọn tỉnh/thành phố</option>
+                <option *ngFor="let city of cities" [value]="city.Name">{{ city.Name }}</option>
+              </select>
             </div>
-            <div class="main-3">
-              <div  *ngFor="let item of data">
-                  <p style="display: flex; justify-content: space-between;"><span> {{item.Name}} ({{item.size.Size}})</span> <span>{{item.qty}}x{{convertVND(item.size.PromotionPrice)}}</span></p>
-              </div>
-              <div style="display: flex;margin-bottom: 19px;font-weight: bold; justify-content: space-between;"><span>Giảm giá</span><div>{{discountMessage}} VND</div></div>
-              <div style="display: flex;margin-bottom: 19px;font-weight: bold; justify-content: space-between;"><span>Phí vận chuyển</span><div id="shipping-fee"></div>{{shippingFeeValue}} VND</div>
-              <div style="display: flex;margin-bottom: 19px; justify-content: space-between;font-weight: bold;color: red;"><span>Tổng cộng</span><span>{{ convertVND(calculateTotalPrice()+shippingFeeValue) }}</span></div>
-              <div class="qr-code">
-                <h4>Vui lòng quét mã dưới đây để thanh toán</h4>
-                <div style="text-align: center;"><img src="../assets/img/QR.png" alt=""></div>
-              </div>
-                <div class="button">
-                  <a  (click)="hideModal4()">
-                      <button type="modal-button" class="btn btn-primary main-input" >
-                          Trở lại
-                      </button>
-                  </a>
 
-                  <a >
-                      <button type="modal-button" (click)="postOrder()" class="btn btn-primary main-input" >
-                          Hoàn thành
-                      </button>
-                  </a>
-                </div>
+            <div class="col">
+              <select class="form-select form-select-sm mb-3" id="district" required [(ngModel)]="address.Town"
+                name="district" (change)="onDistrictChange()">
+                <option value="">Chọn quận/huyện</option>
+                <option *ngFor="let district of districts" [value]="district.Name">{{ district.Name }}</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <select class="form-select form-select-sm mb-3" id="ward" [(ngModel)]="address.Ward" name="ward">
+                <option value="">Chọn phường/ xã</option>
+                <option *ngFor="let w of Wards" [value]="w.Name">{{ w.Name }}</option>
+              </select>
             </div>
           </div>
+
+          <!-- Dòng 3 -->
+          <div class="col">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="DetailAddress"
+              placeholder="Địa chỉ cụ thể" [(ngModel)]="address.DetailAddress"></textarea>
+          </div>
+
+          <div class="button">
+            <button type="button" class="btn btn-primary input" (click)="isShowModelAdd = false">
+              Trở lại
+            </button>
+            <button type="button" class="btn btn-primary input" (click)="postAddress()">
+              Hoàn thành
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
 
   </div>
 </div>
 
-  <div class="modal3">
-      <div class="modal__overlay"></div>
-      <div class="modal__body">
-        <div class="modal__inner">
-            <div class="main-3">
-            <div class="title">
-                <span class="modal-title">Địa chỉ mới</span> <br>
-                <span class="note">Để đặt hàng, vui lòng thêm địa chỉ nhận hàng</span>
-            </div>
-            <div class="main-3">
-                <form action="#" method="get">
-                    <div class="form__row form__row1" id="row1">
-                        <input type="email" class="form-control fname" id="exampleFormControlInput1 fname" placeholder="Họ và tên">
-                        <input type="email" class="form-control phone" id="exampleFormControlInput1 phone" placeholder="Số điện thoại">
-                    </div>
+<div class="modal4">
+  <div class="modal__overlay"></div>
+  <div class="modal__body">
+    <div>
+      <div class="main-3">
+        <div id="title-checkout">
 
-                    <div class="form__row form__row2" id="row2">
-                        <select class="form-select city" aria-label="Default select example">
-                            <option value="" disabled selected>Tỉnh/Thành phố</option>
-                            <option value="bd">Tỉnh Bình Dương</option>
-                            <option value="hcm">Thành phố Hồ Chí Minh</option>
-                        </select>
+        </div>
+        <div class="main-3">
+          <div *ngFor="let item of data">
+            <p style="display: flex; justify-content: space-between;"><span> {{item.Name}} ({{item.size.Size}})</span>
+              <span>{{item.qty}}x{{convertVND(item.size.PromotionPrice)}}</span></p>
+          </div>
+          <div style="display: flex;margin-bottom: 19px;font-weight: bold; justify-content: space-between;"><span>Giảm
+              giá</span>
+            <div>{{discountMessage}} VND</div>
+          </div>
+          <div style="display: flex;margin-bottom: 19px;font-weight: bold; justify-content: space-between;"><span>Phí
+              vận chuyển</span>
+            <div id="shipping-fee"></div>{{shippingFeeValue}} VND
+          </div>
+          <div style="display: flex;margin-bottom: 19px; justify-content: space-between;font-weight: bold;color: red;">
+            <span>Tổng cộng</span><span>{{ convertVND(calculateTotalPrice()+shippingFeeValue) }}</span></div>
+          <div class="qr-code">
+            <h4>Vui lòng quét mã dưới đây để thanh toán</h4>
+            <div style="text-align: center;"><img src="../assets/img/QR.png" alt=""></div>
+          </div>
+          <div class="button">
+            <a (click)="hideModal4()">
+              <button type="modal-button" class="btn btn-primary main-input">
+                Trở lại
+              </button>
+            </a>
 
-                        <select class="form-select district" aria-label="Default select example">
-                            <option value="" disabled selected>Quận/Huyện</option>
-                            <option value="td">Quận Thủ Đức</option>
-                            <option value="q12">Quận 12</option>
-                            <option value="q1">Quận 1</option>
-                            <option value="q9">Quận 9</option>
-                            <option value="gv">Quận Gò Vấp</option>
-                            <option value="bth">Quận Bình Thành</option>
-                            <option value="da">Thành phố Dĩ An</option>
-                            <option value="ta">Thành phố Thuận An</option>
-                            <option value="tu">Thị xã Tân Uyên</option>
-                          </select>
-
-                        <select class="form-select wards" aria-label="Default select example">
-                            <option value="" disabled selected>Phường/Xã</option>
-                            <option value="">Phường Linh Xuân</option>
-                            <option value="">Phường Linh Tây</option>
-                            <option value="">Phường Linh Trung</option>
-                            <option value="">Phường Hiệp Phú</option>
-                            <option value="">Phường Bến Thành</option>
-                            <option value="">Phường Bến Nghé</option>
-                            <option value="">Phường Dĩ An</option>
-                            <option value="">Phường Tân Đông Hiệp </option>
-                        </select>
-                    </div>
-
-                    <div class="form__row form__row3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Địa chỉ cụ thể"></textarea>
-
-                    </div>
-                </form>
-
-                <div class="default">
-                    <input type="checkbox" name="default" id="default" checked> Đặt làm địa chỉ mặc định
-                </div>
-
-                <div class="button">
-                  <a href="#" onclick="hideModal3() & showModal()">
-                      <button type="modal-button" class="btn btn-primary main-input" >
-                          Trở lại
-                      </button>
-                  </a>
-
-                  <a href="#" onclick="hideModal3() & showModal()">
-                      <button type="modal-button" class="btn btn-primary main-input" >
-                          Hoàn thành
-                      </button>
-                  </a>
-                </div>
-            </div>
+            <a>
+              <button type="modal-button" (click)="postOrder()" class="btn btn-primary main-input">
+                Hoàn thành
+              </button>
+            </a>
+          </div>
         </div>
       </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal3">
+  <div class="modal__overlay"></div>
+  <div class="modal__body">
+    <div class="modal__inner">
+      <div class="main-3">
+        <div class="title">
+          <span class="modal-title">Địa chỉ mới</span> <br>
+          <span class="note">Để đặt hàng, vui lòng thêm địa chỉ nhận hàng</span>
+        </div>
+        <div class="main-3">
+          <form action="#" method="get">
+            <div class="form__row form__row1" id="row1">
+              <input type="email" class="form-control fname" id="exampleFormControlInput1 fname"
+                placeholder="Họ và tên">
+              <input type="email" class="form-control phone" id="exampleFormControlInput1 phone"
+                placeholder="Số điện thoại">
+            </div>
+
+            <div class="form__row form__row2" id="row2">
+              <select class="form-select city" aria-label="Default select example">
+                <option value="" disabled selected>Tỉnh/Thành phố</option>
+                <option value="bd">Tỉnh Bình Dương</option>
+                <option value="hcm">Thành phố Hồ Chí Minh</option>
+              </select>
+
+              <select class="form-select district" aria-label="Default select example">
+                <option value="" disabled selected>Quận/Huyện</option>
+                <option value="td">Quận Thủ Đức</option>
+                <option value="q12">Quận 12</option>
+                <option value="q1">Quận 1</option>
+                <option value="q9">Quận 9</option>
+                <option value="gv">Quận Gò Vấp</option>
+                <option value="bth">Quận Bình Thành</option>
+                <option value="da">Thành phố Dĩ An</option>
+                <option value="ta">Thành phố Thuận An</option>
+                <option value="tu">Thị xã Tân Uyên</option>
+              </select>
+
+              <select class="form-select wards" aria-label="Default select example">
+                <option value="" disabled selected>Phường/Xã</option>
+                <option value="">Phường Linh Xuân</option>
+                <option value="">Phường Linh Tây</option>
+                <option value="">Phường Linh Trung</option>
+                <option value="">Phường Hiệp Phú</option>
+                <option value="">Phường Bến Thành</option>
+                <option value="">Phường Bến Nghé</option>
+                <option value="">Phường Dĩ An</option>
+                <option value="">Phường Tân Đông Hiệp </option>
+              </select>
+            </div>
+
+            <div class="form__row form__row3">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                placeholder="Địa chỉ cụ thể"></textarea>
+
+            </div>
+          </form>
+
+          <div class="default">
+            <input type="checkbox" name="default" id="default" checked> Đặt làm địa chỉ mặc định
+          </div>
+
+          <div class="button">
+            <a href="#" onclick="hideModal3() & showModal()">
+              <button type="modal-button" class="btn btn-primary main-input">
+                Trở lại
+              </button>
+            </a>
+
+            <a href="#" onclick="hideModal3() & showModal()">
+              <button type="modal-button" class="btn btn-primary main-input">
+                Hoàn thành
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>

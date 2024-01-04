@@ -29,6 +29,8 @@ export class CheckoutComponent implements OnInit {
   discountMessage: any = '1'
   selectedAddress: any;
   selectedAddresss: any
+  originalAddresses: any
+  address = new IAddress()
   constructor(private cartService: CartService, private accountService: MyAccountService, cdRef: ChangeDetectorRef, private router: Router, private locationService: LocationService, private activateRoute: ActivatedRoute) {
     this.getListAddress();
     this.getAddressDefault()
@@ -64,10 +66,33 @@ export class CheckoutComponent implements OnInit {
       }
     })
   }
+
+  updateTypeAddress() {
+    let selectedId = ''
+    this.addresses.map((item: any) => {
+      if (item.AddressType == 'Default') {
+        selectedId = item._id
+        return
+      }
+    })
+
+    return this.accountService.updateAddressType(selectedId).subscribe({
+      next: (data) => {
+        window.location.reload()
+      },
+      error: (err) => {
+        window.location.reload()
+        this.errMessage = err;
+      }
+    })
+  }
+
+
   getListAddress() {
     this.accountService.getListAddress().subscribe({
       next: (data) => {
         this.addresses = data;
+        this.originalAddresses = data
       },
       error: (err) => {
         this.errMessage = err;
@@ -92,6 +117,7 @@ export class CheckoutComponent implements OnInit {
       }
     })
   }
+
   deleteAddress(id: string) {
     if (confirm("Bạn có muốn xoá?") == true) {
       this.accountService.deleteAddress(id).subscribe({
@@ -156,23 +182,32 @@ export class CheckoutComponent implements OnInit {
 
   showAddModel() {
     this.isShowModelAdd = true
-    console.log(this.isShowModelAdd);
-    console.log('vo day');
-
   }
-  
-  address = new IAddress()
+
   postAddress() {
     this.accountService.postAddress(this.address).subscribe({
       next: (data) => {
         this.getListAddress();
-        this.showAddAddress = false;
+        this.isShowModelAdd = false;
+        window.location.reload()
       },
       error: (err) => {
         this.errMessage = err;
       }
     });
   }
+
+  chooseDefault(id: any) {
+    this.addresses.forEach((address: any) => {
+      if (address._id === id) {
+        address.AddressType = 'Default';
+      } else {
+        address.AddressType = '';
+      }
+    });
+
+  }
+
   districts: any[] = [];
   selectedDistrictName: string = '';
   Wards: any[] = [];
@@ -222,7 +257,6 @@ export class CheckoutComponent implements OnInit {
       if (i._id == item._id) i.qty = item.qty
       return
     })
-
     localStorage.setItem('cart', JSON.stringify(this.data))
   }
   showModal() {
@@ -231,6 +265,7 @@ export class CheckoutComponent implements OnInit {
 
   hideModal() {
     this.modal.classList.remove("open");
+    this.addresses = this.originalAddresses
   }
 
   showModal2() {
