@@ -36,6 +36,8 @@
       <div class="line1"></div>
     </div>
 
+    
+
     <!-- Ship -->
     <div class="container text-center" id="method">
       <div class="row">
@@ -239,9 +241,9 @@
                   <hr>
                 </div>
                 <div>
-                  <button type="modal-button" class="btn btn-primary input_add main-input" (click)="showAddressNew()">
-                    <i class="fa-solid fa-plus"></i>
-                    <span>Thêm địa chỉ mới</span>
+                  <button type="modal-button" class="btn btn-primary input_add main-input" (click)="showAddModel()">
+                    <i (click)="showAddModel()" class="fa-solid fa-plus"></i>
+                    <span (click)="showAddModel()" >Thêm địa chỉ mới nha</span>
                 </button>
                 </div>
 

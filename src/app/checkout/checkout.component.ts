@@ -12,58 +12,58 @@ import { IOrders, OrderDetail } from '../models/Order';
   styleUrls: ['./checkout.component.css']
 })
 
-export class CheckoutComponent implements OnInit
- {
- modal: any
- modal2: any
- modal3: any
- modal4: any
- order=new IOrders()
- addressDefault:any=''
- shippingFeeValue:any
- data:any=[]
- listInCart: any = []
+export class CheckoutComponent implements OnInit {
+  modal: any
+  modal2: any
+  modal3: any
+  modal4: any
+  isShowModelAdd: boolean = false
+  order = new IOrders()
+  addressDefault: any = ''
+  shippingFeeValue: any
+  data: any = []
+  listInCart: any = []
   addresses: any;
   errMessage: any;
   cities: any[] = [];
-  discountMessage: any='1'
-  selectedAddress:any;
-  selectedAddresss:any
- constructor(private cartService:CartService ,private accountService: MyAccountService,cdRef: ChangeDetectorRef,private router: Router, private locationService: LocationService,private activateRoute:ActivatedRoute) {
-  this.getListAddress();
-  this.getAddressDefault()
-  console.log(this.addressDefault);
+  discountMessage: any = '1'
+  selectedAddress: any;
+  selectedAddresss: any
+  constructor(private cartService: CartService, private accountService: MyAccountService, cdRef: ChangeDetectorRef, private router: Router, private locationService: LocationService, private activateRoute: ActivatedRoute) {
+    this.getListAddress();
+    this.getAddressDefault()
+    console.log(this.addressDefault);
 
 
-  this.cartService.currentMessage.subscribe(message => {
-    this.discountMessage = message;
-  });
+    this.cartService.currentMessage.subscribe(message => {
+      this.discountMessage = message;
+    });
 
-  console.log(this.discountMessage);
-  this.cities=[]
-  this.locationService.getCities().subscribe( {
-    next:(data)=>{
-      this.cities=data
-    },
-    error:(err)=>(this.errMessage=err)
-  });
+    console.log(this.discountMessage);
+    this.cities = []
+    this.locationService.getCities().subscribe({
+      next: (data) => {
+        this.cities = data
+      },
+      error: (err) => (this.errMessage = err)
+    });
 
-  // Lấy _id của địa chỉ
-  activateRoute.paramMap.subscribe((param: ParamMap) => {
-    let id = param.get("id");
-    if (id != null) {
-      this.accountService.getOneAddress(id).subscribe({
-        next: (data) => {
-          this.selectedAddress = data;
-        },
-        error: (err) => {
-          this.errMessage = err;
-          console.log(this.errMessage);
-        }
-      })
-    }
-  })
-}
+    // Lấy _id của địa chỉ
+    activateRoute.paramMap.subscribe((param: ParamMap) => {
+      let id = param.get("id");
+      if (id != null) {
+        this.accountService.getOneAddress(id).subscribe({
+          next: (data) => {
+            this.selectedAddress = data;
+          },
+          error: (err) => {
+            this.errMessage = err;
+            console.log(this.errMessage);
+          }
+        })
+      }
+    })
+  }
   getListAddress() {
     this.accountService.getListAddress().subscribe({
       next: (data) => {
@@ -80,12 +80,12 @@ export class CheckoutComponent implements OnInit
       next: (data) => {
         this.addresses = data;
         // Find the default address
-      const defaultAddress = this.addresses.find( (address: { AddressType: string; }) => address.AddressType === "Default");
+        const defaultAddress = this.addresses.find((address: { AddressType: string; }) => address.AddressType === "Default");
 
-      // Set the default address as the selected address
-      if (defaultAddress) {
-        this.selectedAddresss = defaultAddress;
-      }
+        // Set the default address as the selected address
+        if (defaultAddress) {
+          this.selectedAddresss = defaultAddress;
+        }
       },
       error: (err) => {
         this.errMessage = err;
@@ -93,16 +93,15 @@ export class CheckoutComponent implements OnInit
     })
   }
   deleteAddress(id: string) {
-    if (confirm("Bạn có muốn xoá?")==true)
-    {
+    if (confirm("Bạn có muốn xoá?") == true) {
       this.accountService.deleteAddress(id).subscribe({
-          next: (data) => {
-            this.getListAddress();
-            location.reload();
-          },
-          error: (err) => {
-            this.errMessage = err;
-          }
+        next: (data) => {
+          this.getListAddress();
+          location.reload();
+        },
+        error: (err) => {
+          this.errMessage = err;
+        }
       })
     }
   }
@@ -116,9 +115,9 @@ export class CheckoutComponent implements OnInit
   }
   ngOnInit() {
     this.modal = document.querySelector(".modal");
-    this.modal2 = document.querySelector(".modal2");
-    this.modal3 = document.querySelector(".modal3");
-    this.modal4 = document.querySelector(".modal4");
+    // this.modal2 = document.querySelector(".modal2");
+    // this.modal3 = document.querySelector(".modal3");
+    // this.modal4 = document.querySelector(".modal4");
     this.listInCart = localStorage.getItem('cart')
     this.data = JSON.parse(this.listInCart)
     const shippingFeeElement = document.getElementById("shipping-fee")!;
@@ -128,7 +127,7 @@ export class CheckoutComponent implements OnInit
     const storeMethodElement = document.getElementById("store-method")! as HTMLInputElement;
     const visaMethodElement = document.getElementById("visa-method")! as HTMLInputElement;
     const momoMethodElement = document.getElementById("momo-method")! as HTMLInputElement;
-    const updateShippingFee = () : void=>{
+    const updateShippingFee = (): void => {
       if (dobMethodElement.checked) {
         this.convertVND(shippingFeeElement.innerText = "20000");
       } else if (storeMethodElement.checked) {
@@ -136,17 +135,17 @@ export class CheckoutComponent implements OnInit
       }
       this.shippingFeeValue = parseInt(shippingFeeElement.innerText);
     }
-    const updateCheckout = () : void=>{
-    if (visaMethodElement.checked) {
-      this.convertVND(checkoutElement.innerText = "Thanh toán bằng VNPAY");
-    } else if (momoMethodElement.checked) {
-      this.convertVND(checkoutElement.innerText = "Thanh toán bằng MOMO");
+    const updateCheckout = (): void => {
+      if (visaMethodElement.checked) {
+        this.convertVND(checkoutElement.innerText = "Thanh toán bằng VNPAY");
+      } else if (momoMethodElement.checked) {
+        this.convertVND(checkoutElement.innerText = "Thanh toán bằng MOMO");
+      }
+      else if (dobCheckoutElement.checked) {
+        this.convertVND(checkoutElement.innerText = "Thanh toán khi nhận hàng (COD)");
+      }
     }
-     else if (dobCheckoutElement.checked) {
-      this.convertVND(checkoutElement.innerText = "Thanh toán khi nhận hàng (COD)");
-    }
-  }
-// Thêm sự kiện change vào các phần tử radio button
+    // Thêm sự kiện change vào các phần tử radio button
     dobMethodElement.addEventListener("change", updateShippingFee);
     storeMethodElement.addEventListener("change", updateShippingFee);
     visaMethodElement.addEventListener("change", updateCheckout);
@@ -155,7 +154,14 @@ export class CheckoutComponent implements OnInit
 
   }
 
-  address=new IAddress()
+  showAddModel() {
+    this.isShowModelAdd = true
+    console.log(this.isShowModelAdd);
+    console.log('vo day');
+
+  }
+  
+  address = new IAddress()
   postAddress() {
     this.accountService.postAddress(this.address).subscribe({
       next: (data) => {
@@ -176,8 +182,8 @@ export class CheckoutComponent implements OnInit
 
     this.districts = [];
     this.selectedDistrictName = '';
-    this.Wards=[];
-    this.selectedWardName='';
+    this.Wards = [];
+    this.selectedWardName = '';
 
     const selectedCity = this.cities.find(city => city.Name === this.address.City);
 
@@ -185,23 +191,23 @@ export class CheckoutComponent implements OnInit
       this.districts = selectedCity.Districts;
     }
   }
-  onDistrictChange():void{
-    this.Wards=[];
-    this.selectedWardName='';
+  onDistrictChange(): void {
+    this.Wards = [];
+    this.selectedWardName = '';
 
-    const selectedDistrict = this.districts.find(district=>district.Name === this.address.Town);
+    const selectedDistrict = this.districts.find(district => district.Name === this.address.Town);
 
-    if(selectedDistrict){
-      this.Wards=selectedDistrict.Wards;
+    if (selectedDistrict) {
+      this.Wards = selectedDistrict.Wards;
     }
   }
-// Đóng Modal khi click ra ngoài phạm vi của Modal
-@HostListener('document:click', ['$event'])
-public onClick(event: any): void {
-  if (event.target.classList.contains('modal')) {
-    this.closeAddressNew();
+  // Đóng Modal khi click ra ngoài phạm vi của Modal
+  @HostListener('document:click', ['$event'])
+  public onClick(event: any): void {
+    if (event.target.classList.contains('modal')) {
+      this.closeAddressNew();
+    }
   }
-}
 
   calculateTotalPrice(): number {
     let totalPrice = 0;
@@ -211,7 +217,7 @@ public onClick(event: any): void {
     return totalPrice;
   }
   updateQty(item: any) {
-    if(item.qty < 1 || item.qty > 99) return alert('Phải nhập số lượng lớn hơn 0')
+    if (item.qty < 1 || item.qty > 99) return alert('Phải nhập số lượng lớn hơn 0')
     this.data.map((i: any) => {
       if (i._id == item._id) i.qty = item.qty
       return
@@ -257,38 +263,38 @@ public onClick(event: any): void {
     this.showAddAddress = false
   }
 
-  postOrder(){
+  postOrder() {
 
-    this.order.OrderDate=new Date(Date.now())
-    this.order.OrderStatus="Chờ xác nhận"
+    this.order.OrderDate = new Date(Date.now())
+    this.order.OrderStatus = "Chờ xác nhận"
     this.order.Details = [];
-    this.order.CostShip=this.shippingFeeValue
-  // Lặp qua mảng các sản phẩm và thêm các chi tiết đơn hàng vào đối tượng Order
-  for (const item of this.data) {
-    const detail = new OrderDetail({
-      ProductID: item._id,
-      ProductName: item.Name,
-      Size: item.size.Size,
-      UnitPrice: item.size.PromotionPrice,
-      Quantity: item.qty,
-      LineTotal: item.size.PromotionPrice * item.qty,
-      ReviewStatus: ''
-    });
-    this.order.Details.push(detail);
-    let Subtotal=0
-    Subtotal+=item.size.PromotionPrice * item.qty
-    this.order.SubTotal=Subtotal+this.order.CostShip
-  }
+    this.order.CostShip = this.shippingFeeValue
+    // Lặp qua mảng các sản phẩm và thêm các chi tiết đơn hàng vào đối tượng Order
+    for (const item of this.data) {
+      const detail = new OrderDetail({
+        ProductID: item._id,
+        ProductName: item.Name,
+        Size: item.size.Size,
+        UnitPrice: item.size.PromotionPrice,
+        Quantity: item.qty,
+        LineTotal: item.size.PromotionPrice * item.qty,
+        ReviewStatus: ''
+      });
+      this.order.Details.push(detail);
+      let Subtotal = 0
+      Subtotal += item.size.PromotionPrice * item.qty
+      this.order.SubTotal = Subtotal + this.order.CostShip
+    }
 
     this.cartService.postOrder(this.order).subscribe({
-      next:(data)=>{this.order=data},
-      error:(err)=>{this.errMessage=err}
+      next: (data) => { this.order = data },
+      error: (err) => { this.errMessage = err }
     })
     alert("Bạn đã đặt hàng thành công");
     localStorage.setItem('cart', JSON.stringify([]));
     this.cartService.postCart().subscribe({
-      next:(data)=>{},
-      error:(err)=>{this.errMessage=err}
+      next: (data) => { },
+      error: (err) => { this.errMessage = err }
     })
     this.router.navigate(['myAccount'])
   }

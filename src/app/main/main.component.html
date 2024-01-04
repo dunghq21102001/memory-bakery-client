@@ -72,10 +72,10 @@
       <p class="main-title">Sản phẩm mới</p>
       <div class="carousel-item active">
         <div class="new-product">
-          <a href="./detail/{{listProductPerPage[0]._id}}">
+          <a href="./detail/{{listProductPerPage[0]?._id}}">
             <img src="{{listProductPerPage[0].Img[0]}}" alt=""></a>
           <div class="new-product__right">
-            <a href="./detail/{{listProductPerPage[0]._id}}">
+            <a href="./detail/{{listProductPerPage[0]?._id}}">
               <p class="name">{{listProductPerPage[0].Name}}</p>
             </a>
             <p class="price">

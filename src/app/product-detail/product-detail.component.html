@@ -94,7 +94,8 @@
                             <div class="sub_title">Số lượng</div>
                             <div class="quantity-box">
                                 <button class="quantity-decrease" id="decrease" (click)="decreaseValue(quantity.value)">-</button>
-                                <input name="ngModel" [(ngModel)]="qty" type="text" value="1" class="quantity-input" id="quantity1" #quantity >
+                                <input name="ngModel" (input)="onInputChange($event)" type="number" [value]="qty" class="quantity-input" id="quantity1" #quantity>
+
 
                                 <button class="quantity-increase" id="increase" (click)="increaseValue(quantity.value)">+</button>
                                 <div *ngIf="qty < 0" style="color: red;">Số lượng không hợp lệ!</div>

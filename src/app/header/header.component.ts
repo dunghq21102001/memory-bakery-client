@@ -25,10 +25,11 @@ export class HeaderComponent {
   cart = []
   Category: any;
   isActive = false;
-  values = '';
+  values:string = '';
 
-  onKey(event: any) {
-    this.values = event.target.value;
+  onInputChange(value: string) {
+    let filteredValue: string = value.replace(/[!@#$%^&*()_+~{:<>?/*\-+]/g, '');
+    this.values = filteredValue;
   }
   constructor(public _service: ProductAPIService, public _cart: CartService,private accountService: MyAccountService,private router: Router, private authService: AuthService,private authGuard:AuthGuard) {
     this.login=this.authGuard.isLoggedIn()

@@ -15,7 +15,7 @@ export class ProductDetailComponent implements OnDestroy  {
   product:any;
   products: any;
   id:any
-  qty:any
+  qty:any = 1
   size:any
   errMessage:string=''
   isChangeValue: boolean=false;
@@ -82,6 +82,22 @@ export class ProductDetailComponent implements OnDestroy  {
       });
   });
   }
+
+  onInputChange(event: any) {
+    let inputValue: number = +event.target.value;
+
+    console.log('giá trị ban đầu: ' +inputValue);
+    
+    if (inputValue <= 0 || isNaN(inputValue)) {
+      this.qty = 1;
+      console.log('giá trị sau khi sửa đổi: '+ this.qty);
+      
+    } else {
+      this.qty = inputValue;
+      console.log('giá trị sau khi sửa đổi 2: '+ this.qty);
+    }
+  }
+
   decreaseValue(quantity: any): void {
 
     if (quantity > 1) { // Kiểm tra số lượng lớn hơn 1 để tránh giá trị âm hoặc bằng 0

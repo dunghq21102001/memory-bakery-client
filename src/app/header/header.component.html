@@ -5,7 +5,7 @@
      </div>
      <div class="btn-search" >
       <div class="inputSearch">
-        <input (change)="onKey($event)" [value]="values" type="text" class="search" id="inputvalue" placeholder="Tìm kiếm">
+        <input [(ngModel)]="values" (ngModelChange)="onInputChange($event)" type="text" class="search" id="inputvalue" placeholder="Tìm kiếm">
         <button class="ti-search"><i (click)="search()" style="color: var(--primary_color);font-size: 25px;display: flex; align-items: center;"  class="fa-solid fa-magnifying-glass"></i></button>
     </div>
      </div>
@@ -23,7 +23,7 @@
               </div>
               <div class="isLogin">
                 <a routerLink="./myAccount" *ngIf="login">
-                  <img style="width: 50px;height: 50px;border-radius: 50%;" src="{{user.Image}}" alt="">@{{user.UserName}}
+                  <img style="width: 50px;height: 50px;border-radius: 50%;" src="{{user?.Image}}" alt="">@{{user?.UserName}}
                 </a>
               </div>
 

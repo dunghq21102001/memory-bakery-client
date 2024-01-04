@@ -31,6 +31,20 @@ export class RegisterComponent {
       alert('Vui lòng điền tên đăng nhập');
       return;
     }
+
+    // Kiểm tra độ dài hợp lý (từ 4 đến 20 ký tự)
+    if (this.user.UserName.length < 4 || this.user.UserName.length > 20) {
+      alert('Tên đăng nhập phải có độ dài từ 4 đến 20 ký tự');
+      return;
+    }
+
+    // Kiểm tra ký tự hợp lệ (chữ cái, số, dấu gạch dưới, hoặc dấu chấm)
+    var validCharacters = /^[a-zA-Z0-9_.]+$/;
+    if (!validCharacters.test(this.user.UserName)) {
+      alert('Tên đăng nhập chỉ được chứa chữ cái, số, dấu gạch dưới hoặc dấu chấm');
+      return;
+    }
+    
     if (!/^\d{10}$/.test(this.user.Phone)) {
       alert('SĐT không hợp lệ')
       return
