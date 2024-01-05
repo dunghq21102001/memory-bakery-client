@@ -24,7 +24,7 @@ export class CheckoutComponent implements OnInit {
   isShowCheckout: boolean = false
   order = new IOrders()
   addressDefault: any = ''
-  shippingFeeValue: any
+  shippingFeeValue: any = 0
   data: any = []
   listInCart: any = []
   addresses: any;
@@ -240,7 +240,7 @@ export class CheckoutComponent implements OnInit {
         this.isValidAddress = true
       }
     })
-    if(this.isValidAddress == false)  return alert('Bạn phải chọn 1 địa chỉ làm mặc định để đặt hàng')
+    if (this.isValidAddress == false) return alert('Bạn phải chọn 1 địa chỉ làm mặc định để đặt hàng')
     if (this.chooseShipType == false) return alert('Bạn phải chọn phương thức vận chuyển để đặt hàng')
     if (this.chooseMethod == false) return alert('Bạn phải chọn phương thức thanh toán để đặt hàng')
 
@@ -382,4 +382,40 @@ export class CheckoutComponent implements OnInit {
     })
     this.router.navigate(['myAccount'])
   }
+
+  postOrder2() {
+
+    this.order.OrderDate = new Date(Date.now())
+    this.order.OrderStatus = "Chờ xác nhận"
+    this.order.Details = [];
+    this.order.CostShip = this.shippingFeeValue
+    // Lặp qua mảng các sản phẩm và thêm các chi tiết đơn hàng vào đối tượng Order
+    for (const item of this.data) {
+      const detail = new OrderDetail({
+        ProductID: item._id,
+        ProductName: item.Name,
+        Size: item.size.Size,
+        UnitPrice: item.size.PromotionPrice,
+        Quantity: item.qty,
+        LineTotal: item.size.PromotionPrice * item.qty,
+        ReviewStatus: ''
+      });
+      this.order.Details.push(detail);
+      let Subtotal = 0
+      Subtotal += item.size.PromotionPrice * item.qty
+      this.order.SubTotal = Subtotal + this.order.CostShip
+    }
+
+    this.cartService.postOrder(this.order).subscribe({
+      next: (data) => { this.order = data },
+      error: (err) => { this.errMessage = err }
+    })
+    localStorage.setItem('cart', JSON.stringify([]));
+    this.cartService.postCart().subscribe({
+      next: (data) => { },
+      error: (err) => { this.errMessage = err }
+    })
+    this.router.navigate(['/'])
+  }
 }
+

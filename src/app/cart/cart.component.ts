@@ -116,9 +116,8 @@ export class CartComponent {
       handleError(error:HttpErrorResponse){
         return throwError(()=>new Error(error.message))
   }
+
   postCart(){
-    console.log(this.data.length);
-    
     if(this.data.length == 0) return alert('Bạn cần phải có sản phẩm để có thể đặt hàng')
     this.cartService.postCart().subscribe({
       next: (data) => {
