@@ -47,7 +47,7 @@
           <div class="line"></div>
           <div class="ship_option">
             <div class="option">
-              <div><input type="radio" name="ship" id="DOB-method"></div>
+              <div><input type="radio" (change)="chooseShipType = true" name="ship" id="DOB-method"></div>
               <div class="des left">Giao hàng tận nơi</div>
               <div class="price-info">
                 <div class="price">
@@ -59,7 +59,7 @@
               </div>
             </div>
             <div class="option">
-              <div><input type="radio" name="ship" id="store-method"></div>
+              <div><input type="radio" (change)="chooseShipType = true" name="ship" id="store-method"></div>
               <div class="des left">Lấy tại cửa hàng</div>
               <div class="price-info">
                 <div class="price">
@@ -81,10 +81,10 @@
           <div class="line"></div>
           <div class="ship_option">
             <div class="option_payment">
-              <div><input type="radio" name="payment" id="DOB-checkout"></div>
+              <div><input type="radio" (change)="chooseMethod = true" name="payment" id="DOB-checkout"></div>
               <div class="des left">Thanh toán khi nhận hàng (COD)</div>
             </div>
-            <div class="option_payment">
+            <!-- <div class="option_payment">
               <div><input type="radio" name="payment" id="visa-method"></div>
               <div class="des left">Thẻ ATM/InternetBanking/Visa/Master/JCB qua cổng VNPAY</div>
             </div>
@@ -92,7 +92,7 @@
             <div class="option_payment">
               <div><input type="radio" name="payment" id="momo-method"></div>
               <div class="des left">Ví Momo</div>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -211,7 +211,7 @@
 
       <div class="button_right">
         <a>
-          <button type="button" (click)="isShowCheckout = true" class="btn btn-primary input">
+          <button type="button" (click)="checkValid()" class="btn btn-primary input">
             Hoàn tất đơn hàng
           </button>
         </a>
@@ -424,11 +424,11 @@
             <!-- <div style="text-align: center;"><img src="../assets/img/QR.png" alt=""></div> -->
           </div>
           <div class="button">
-            <a (click)="hideModal4()">
+            <!-- <a (click)="hideModal4()">
               <button type="modal-button" class="btn btn-primary main-input">
                 Trở lại
               </button>
-            </a>
+            </a> -->
 
             <a>
               <button type="modal-button" (click)="postOrder()" class="btn btn-primary main-input">

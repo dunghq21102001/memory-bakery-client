@@ -17,6 +17,9 @@ export class CheckoutComponent implements OnInit {
   modal2: any
   modal3: any
   modal4: any
+  chooseMethod: boolean = false
+  chooseShipType: boolean = false
+  isValidAddress: boolean = false
   isShowModelAdd: boolean = false
   isShowCheckout: boolean = false
   order = new IOrders()
@@ -228,6 +231,20 @@ export class CheckoutComponent implements OnInit {
         this.errMessage = err;
       }
     });
+  }
+
+  checkValid() {
+    if (this.addresses.length == 0) return alert('Bạn phải có 1 địa chỉ để đặt hàng')
+    this.addresses.map((item: any) => {
+      if (item.AddressType == 'Default') {
+        this.isValidAddress = true
+      }
+    })
+    if(this.isValidAddress == false)  return alert('Bạn phải chọn 1 địa chỉ làm mặc định để đặt hàng')
+    if (this.chooseShipType == false) return alert('Bạn phải chọn phương thức vận chuyển để đặt hàng')
+    if (this.chooseMethod == false) return alert('Bạn phải chọn phương thức thanh toán để đặt hàng')
+
+    this.isShowCheckout = true
   }
 
   chooseDefault(id: any) {
