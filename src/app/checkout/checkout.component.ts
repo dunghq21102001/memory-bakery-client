@@ -159,7 +159,7 @@ export class CheckoutComponent implements OnInit {
     const momoMethodElement = document.getElementById("momo-method")! as HTMLInputElement;
     const updateShippingFee = (): void => {
       if (dobMethodElement.checked) {
-        this.convertVND(shippingFeeElement.innerText = "20000");
+        this.convertVND(shippingFeeElement.innerText = "20.000 VND");
       } else if (storeMethodElement.checked) {
         this.convertVND(shippingFeeElement.innerText = "0");
       }
