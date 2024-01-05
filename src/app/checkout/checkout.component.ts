@@ -186,6 +186,38 @@ export class CheckoutComponent implements OnInit {
   }
 
   postAddress() {
+    if (!this.address.AddressName || this.address.AddressName.trim() === '') {
+      alert('Họ và tên không được bỏ trống')
+      return;
+    }
+
+    const phoneRegex = /^\d{10}$/;
+    if (!this.address.AddressPhone || !phoneRegex.test(this.address.AddressPhone)) {
+      alert('Bạn phải nhập đúng số điện thoại và đúng định dạng')
+      return;
+    }
+
+    if (!this.address.City || this.address.City.trim() === '') {
+      alert('Thành phố không được bỏ trống')
+      return;
+    }
+
+
+    if (!this.address.Town || this.address.Town.trim() === '') {
+      alert('QUận/huyện không được bỏ trống')
+      return;
+    }
+
+    if (!this.address.Ward || this.address.Ward.trim() === '') {
+      alert('Phường/xã không được bỏ trống')
+      return;
+    }
+
+    if (!this.address.DetailAddress || this.address.DetailAddress.trim() === '') {
+      alert('Địa chỉ cụ thể không được bỏ trống')
+      return;
+    }
+
     this.accountService.postAddress(this.address).subscribe({
       next: (data) => {
         this.getListAddress();
