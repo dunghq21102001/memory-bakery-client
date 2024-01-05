@@ -174,7 +174,7 @@ export class MyAccountService {
         headers:headers,
         responseType:"text"
       }
-      return this._http.get<any>("http://localhost:6868//orders/"+_id,requestOptions).pipe(
+      return this._http.get<any>("http://localhost:6868/orders/"+_id,requestOptions).pipe(
         map(res=>JSON.parse(res)),
         retry(3),
         catchError(this.handleError)

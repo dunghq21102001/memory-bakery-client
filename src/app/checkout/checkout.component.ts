@@ -326,7 +326,6 @@ export class CheckoutComponent implements OnInit {
       next: (data) => { this.order = data },
       error: (err) => { this.errMessage = err }
     })
-    alert("Bạn đã đặt hàng thành công");
     localStorage.setItem('cart', JSON.stringify([]));
     this.cartService.postCart().subscribe({
       next: (data) => { },

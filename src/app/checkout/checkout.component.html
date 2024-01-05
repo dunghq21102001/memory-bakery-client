@@ -405,7 +405,7 @@
 
         </div>
         <div class="main-3">
-          <div *ngFor="let item of data">
+          <!-- <div *ngFor="let item of data">
             <p style="display: flex; justify-content: space-between;"><span> {{item.Name}} ({{item.size.Size}})</span>
               <span>{{item.qty}}x{{convertVND(item.size.PromotionPrice)}}</span></p>
           </div>
@@ -416,12 +416,12 @@
           <div style="display: flex;margin-bottom: 19px;font-weight: bold; justify-content: space-between;"><span>Phí
               vận chuyển</span>
             <div id="shipping-fee"></div>{{shippingFeeValue}} VND
-          </div>
-          <div style="display: flex;margin-bottom: 19px; justify-content: space-between;font-weight: bold;color: red;">
-            <span>Tổng cộng</span><span>{{ convertVND(calculateTotalPrice()+shippingFeeValue) }}</span></div>
+          </div> -->
+          <!-- <div style="display: flex;margin-bottom: 19px; justify-content: space-between;font-weight: bold;color: red;"> -->
+            <!-- <span>Tổng cộng</span><span>{{ convertVND(calculateTotalPrice()+shippingFeeValue) }}</span></div> -->
           <div class="qr-code">
-            <h4>Vui lòng quét mã dưới đây để thanh toán</h4>
-            <div style="text-align: center;"><img src="../assets/img/QR.png" alt=""></div>
+            <h4>Bạn đã đặt hàng thành công</h4>
+            <!-- <div style="text-align: center;"><img src="../assets/img/QR.png" alt=""></div> -->
           </div>
           <div class="button">
             <a (click)="hideModal4()">
@@ -432,7 +432,7 @@
 
             <a>
               <button type="modal-button" (click)="postOrder()" class="btn btn-primary main-input">
-                Hoàn thành
+                Xem đơn hàng
               </button>
             </a>
           </div>
