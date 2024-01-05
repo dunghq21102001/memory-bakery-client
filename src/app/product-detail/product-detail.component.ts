@@ -128,7 +128,6 @@ export class ProductDetailComponent implements OnDestroy {
       listProduct.push(p)
       localStorage.setItem('cart', JSON.stringify(listProduct))
       alert("Bạn đã thêm sản phẩm thành công");
-
     } else {
       listProduct = JSON.parse(cart)
       listProduct.map((pro: any) => {
@@ -148,9 +147,7 @@ export class ProductDetailComponent implements OnDestroy {
       }
       localStorage.setItem('cart', JSON.stringify(listProduct))
       alert("Bạn đã thêm sản phẩm thành công");
-
     }
-    alert("Bạn đã thêm sản phẩm thành công");
 
   }
   addToCart1(p: any) {
