@@ -18,6 +18,7 @@ export class CheckoutComponent implements OnInit {
   modal3: any
   modal4: any
   isShowModelAdd: boolean = false
+  isShowCheckout: boolean = false
   order = new IOrders()
   addressDefault: any = ''
   shippingFeeValue: any

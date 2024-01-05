@@ -211,7 +211,7 @@
 
       <div class="button_right">
         <a>
-          <button type="button" (click)="showModal4()" class="btn btn-primary input">
+          <button type="button" (click)="isShowCheckout = true" class="btn btn-primary input">
             Hoàn tất đơn hàng
           </button>
         </a>
@@ -396,7 +396,7 @@
   </div>
 </div>
 
-<div class="modal4">
+<div class="modal4" [ngClass]="{'open': isShowCheckout}">
   <div class="modal__overlay"></div>
   <div class="modal__body">
     <div>
